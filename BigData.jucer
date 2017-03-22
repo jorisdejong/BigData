@@ -5,6 +5,53 @@
               jucerVersion="4.3.1">
   <MAINGROUP id="YJxLjZ" name="BigData">
     <GROUP id="{B5C78092-8F88-B9F7-5FD4-817BBC6768DF}" name="Source">
+      <GROUP id="{26A98265-CFEB-A09A-84C1-0FD1DA827CE5}" name="fixture">
+        <FILE id="I7g1ch" name="FixtureController.cpp" compile="1" resource="0"
+              file="Source/fixture/FixtureController.cpp"/>
+        <FILE id="Y3isW2" name="FixtureController.h" compile="0" resource="0"
+              file="Source/fixture/FixtureController.h"/>
+        <FILE id="ItQCn6" name="FixtureParameter.cpp" compile="1" resource="0"
+              file="Source/fixture/FixtureParameter.cpp"/>
+        <FILE id="j5V18S" name="FixtureParameter.h" compile="0" resource="0"
+              file="Source/fixture/FixtureParameter.h"/>
+        <FILE id="oLmSR3" name="Fixture.cpp" compile="1" resource="0" file="Source/fixture/Fixture.cpp"/>
+        <FILE id="iDdTRR" name="Fixture.h" compile="0" resource="0" file="Source/fixture/Fixture.h"/>
+      </GROUP>
+      <GROUP id="{EA6CE18B-8C76-A5FF-EE68-BF5DB76BEF96}" name="gui"/>
+      <GROUP id="{43E4F080-9A70-F1FC-5A5B-CFE52B6938E6}" name="io">
+        <GROUP id="{F4A7292D-6AA4-E240-3331-1CD8683AE82F}" name="midi">
+          <FILE id="jetoEh" name="MidiControlHandle.cpp" compile="1" resource="0"
+                file="Source/io/midi/MidiControlHandle.cpp"/>
+          <FILE id="oTANSc" name="MidiControlHandle.h" compile="0" resource="0"
+                file="Source/io/midi/MidiControlHandle.h"/>
+        </GROUP>
+        <GROUP id="{378704DC-A4A8-CFBC-83C5-31736978CFCC}" name="osc">
+          <FILE id="kfx2Pe" name="OscControlHandle.cpp" compile="1" resource="0"
+                file="Source/io/osc/OscControlHandle.cpp"/>
+          <FILE id="FhUokP" name="OscControlHandle.h" compile="0" resource="0"
+                file="Source/io/osc/OscControlHandle.h"/>
+          <FILE id="mjFwLU" name="OscInputAdapter.cpp" compile="1" resource="0"
+                file="Source/io/osc/OscInputAdapter.cpp"/>
+          <FILE id="WTvlcn" name="OscInputAdapter.h" compile="0" resource="0"
+                file="Source/io/osc/OscInputAdapter.h"/>
+          <FILE id="JvaL8L" name="OscOutputAdapter.cpp" compile="1" resource="0"
+                file="Source/io/osc/OscOutputAdapter.cpp"/>
+          <FILE id="ALTgyQ" name="OscOutputAdapter.h" compile="0" resource="0"
+                file="Source/io/osc/OscOutputAdapter.h"/>
+        </GROUP>
+        <FILE id="nRDmE4" name="ControlHandle.cpp" compile="1" resource="0"
+              file="Source/io/ControlHandle.cpp"/>
+        <FILE id="mQoWRA" name="ControlHandle.h" compile="0" resource="0" file="Source/io/ControlHandle.h"/>
+        <FILE id="I2SXji" name="InputAdapter.cpp" compile="1" resource="0"
+              file="Source/io/InputAdapter.cpp"/>
+        <FILE id="btUjSE" name="InputAdapter.h" compile="0" resource="0" file="Source/io/InputAdapter.h"/>
+        <FILE id="Cmj2cx" name="IoController.cpp" compile="1" resource="0"
+              file="Source/io/IoController.cpp"/>
+        <FILE id="I1Pty1" name="IoController.h" compile="0" resource="0" file="Source/io/IoController.h"/>
+        <FILE id="zLobld" name="OutputAdapter.cpp" compile="1" resource="0"
+              file="Source/io/OutputAdapter.cpp"/>
+        <FILE id="eoNf36" name="OutputAdapter.h" compile="0" resource="0" file="Source/io/OutputAdapter.h"/>
+      </GROUP>
       <FILE id="guVWwS" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
       <FILE id="FbXcqv" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
@@ -23,33 +70,23 @@
         <MODULEPATH id="juce_core" path="../JUCE/modules"/>
         <MODULEPATH id="juce_events" path="../JUCE/modules"/>
         <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
         <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_cryptography" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_video" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_opengl" path="../JUCE/modules"/>
         <MODULEPATH id="juce_audio_basics" path="../JUCE/modules"/>
         <MODULEPATH id="juce_audio_devices" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_audio_formats" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_audio_processors" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_osc" path="../JUCE/modules"/>
       </MODULEPATHS>
     </VS2015>
   </EXPORTFORMATS>
   <MODULES>
     <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
     <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0"/>
     <MODULE id="juce_core" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0"/>
     <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
     <MODULE id="juce_events" showAllCode="1" useLocalCopy="0"/>
     <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
     <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0"/>
-    <MODULE id="juce_video" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_osc" showAllCode="1" useLocalCopy="0"/>
   </MODULES>
   <JUCEOPTIONS/>
 </JUCERPROJECT>
