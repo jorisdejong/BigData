@@ -12,20 +12,30 @@
 #define HANDLEBLOCK_H_INCLUDED
 
 #include "../../JuceLibraryCode/JuceHeader.h"
+#include "../io/ControlHandle.h"
 
 //==============================================================================
 /*
 */
-class HandleBlock    : public Component
+class HandleBlock    : 
+	public Component, 
+	public Button::Listener
 {
 public:
-    HandleBlock();
+    HandleBlock(ControlHandle* handle);
     ~HandleBlock();
 
     void paint (Graphics&) override;
     void resized() override;
 
+	void buttonClicked( Button* b ) override;
+
 private:
+	ScopedPointer<TextButton> linkButton;
+	ScopedPointer<TextButton> invertButton;
+
+	ControlHandle* handle;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (HandleBlock)
 };
 
