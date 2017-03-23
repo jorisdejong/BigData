@@ -8,6 +8,9 @@
     <Filter Include="BigData\Source">
       <UniqueIdentifier>{66602F59-44F0-9E80-FAB9-E22008E0F00C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BigData\Source\hardcoded">
+      <UniqueIdentifier>{05D0388D-3576-B9B5-51C2-2AD04B750DB6}</UniqueIdentifier>
+    </Filter>
     <Filter Include="BigData\Source\fixture">
       <UniqueIdentifier>{328980F3-98CE-D2EA-0B19-5041CA62CF99}</UniqueIdentifier>
     </Filter>
@@ -250,6 +253,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\hardcoded\Hardcoded.cpp">
+      <Filter>BigData\Source\hardcoded</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\fixture\FixtureController.cpp">
       <Filter>BigData\Source\fixture</Filter>
     </ClCompile>
@@ -1572,6 +1578,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\hardcoded\Hardcoded.h">
+      <Filter>BigData\Source\hardcoded</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\fixture\FixtureController.h">
       <Filter>BigData\Source\fixture</Filter>
     </ClInclude>

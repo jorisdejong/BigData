@@ -5,6 +5,10 @@
               jucerVersion="4.3.1">
   <MAINGROUP id="YJxLjZ" name="BigData">
     <GROUP id="{B5C78092-8F88-B9F7-5FD4-817BBC6768DF}" name="Source">
+      <GROUP id="{83899985-26B7-6C5C-C5B2-2B736EBC96DF}" name="hardcoded">
+        <FILE id="paIaqm" name="Hardcoded.cpp" compile="1" resource="0" file="Source/hardcoded/Hardcoded.cpp"/>
+        <FILE id="FMSdwp" name="Hardcoded.h" compile="0" resource="0" file="Source/hardcoded/Hardcoded.h"/>
+      </GROUP>
       <GROUP id="{26A98265-CFEB-A09A-84C1-0FD1DA827CE5}" name="fixture">
         <FILE id="I7g1ch" name="FixtureController.cpp" compile="1" resource="0"
               file="Source/fixture/FixtureController.cpp"/>

@@ -130,6 +130,7 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\hardcoded\Hardcoded.cpp"/>
     <ClCompile Include="..\..\Source\fixture\FixtureController.cpp"/>
     <ClCompile Include="..\..\Source\fixture\FixtureParameter.cpp"/>
     <ClCompile Include="..\..\Source\fixture\Fixture.cpp"/>
@@ -1341,6 +1342,7 @@
     <ClCompile Include="..\..\JuceLibraryCode\juce_osc.cpp"/>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\hardcoded\Hardcoded.h"/>
     <ClInclude Include="..\..\Source\fixture\FixtureController.h"/>
     <ClInclude Include="..\..\Source\fixture\FixtureParameter.h"/>
     <ClInclude Include="..\..\Source\fixture\Fixture.h"/>
