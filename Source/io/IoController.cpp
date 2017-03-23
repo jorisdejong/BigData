@@ -10,7 +10,7 @@
 
 #include "IoController.h"
 
-IoController::IoController( InputAdapter* input, OutputAdapter* output ) : input ( input ), output ( output )
+IoController::IoController( String name, InputAdapter* input, OutputAdapter* output ) : name( name ), input( input ), output( output )
 {
 }
 

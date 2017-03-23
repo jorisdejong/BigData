@@ -21,13 +21,14 @@
 class IoController
 {
 public:
-	IoController( InputAdapter* input, OutputAdapter* output );
+	IoController( String name, InputAdapter* input, OutputAdapter* output );
 	~IoController();
 
 	InputAdapter* getInput();
 	OutputAdapter* getOutput();
 
 private:
+	String name;
 	ScopedPointer<InputAdapter> input;
 	ScopedPointer<OutputAdapter> output;
 
