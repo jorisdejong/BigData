@@ -23,8 +23,7 @@
     your controls and content.
 */
 class MainContentComponent   : 
-	public Component,
-	public Timer
+	public Component
 {
 public:
     //==============================================================================
@@ -34,10 +33,7 @@ public:
     void paint (Graphics&) override;
     void resized() override;
 
-	void timerCallback() override;
-
 private:
-	ScopedPointer<IoController> oscController;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainContentComponent)
 };
