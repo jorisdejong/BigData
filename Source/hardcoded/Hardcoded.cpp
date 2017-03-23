@@ -18,9 +18,7 @@ void Hardcoded::create()
 
 	Fixture* globalFixture = new Fixture( "Global" );
 	FixtureParameter* speed = new FixtureParameter( "Speed" );
-	ControlHandle* oscHandle = new OscControlHandle( "/layer9/video/speed/values" );
-	oscHandle->setIoController( oscController ); //does not become the owner!
-	speed->addHandle( oscHandle );
+	speed->addHandle( new OscControlHandle( "/layer9/video/speed/values", oscController ) );
 	globalFixture->addParameter( speed );
 
 	FixtureController::getInstance()->addFixture( globalFixture );

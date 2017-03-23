@@ -10,7 +10,8 @@
 
 #include "MidiControlHandle.h"
 
-MidiControlHandle::MidiControlHandle( int channel, int controller, bool isNote )
+MidiControlHandle::MidiControlHandle( int channel, int controller, bool isNote ) : 
+	ControlHandle( nullptr )
 {
 }
 
