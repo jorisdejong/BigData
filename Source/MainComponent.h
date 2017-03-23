@@ -11,11 +11,6 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 
-#include "fixture/FixtureController.h"
-#include "io/osc/OscControlHandle.h"
-#include "io/osc/OscInputAdapter.h"
-#include "io/osc/OscOutputAdapter.h"
-
 
 //==============================================================================
 /*
