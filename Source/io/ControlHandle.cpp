@@ -10,8 +10,9 @@
 
 #include "ControlHandle.h"
 
-ControlHandle::ControlHandle()
+ControlHandle::ControlHandle( IoController* io, bool canBeInverted ) : controller( io ), invertable( canBeInverted )
 {
+	linked = false;
 }
 
 ControlHandle::~ControlHandle()
@@ -38,9 +39,29 @@ FixtureParameter * ControlHandle::getParameter()
 	return parameter;
 }
 
-void ControlHandle::setIoController( IoController * newIo )
+void ControlHandle::setLinkStatus( bool state )
 {
-	controller = newIo;
+	linked = state;
+}
+
+bool ControlHandle::isLinked()
+{
+	return linked;
+}
+
+bool ControlHandle::canBeInverted()
+{
+	return invertable;
+}
+
+void ControlHandle::setInverted( bool state )
+{
+	invert = state;
+}
+
+bool ControlHandle::isInverted()
+{
+	return invert;
 }
 
 

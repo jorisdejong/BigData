@@ -19,7 +19,7 @@ class OscControlHandle :
 	public ControlHandle
 {
 public:
-	OscControlHandle( OSCAddress address );
+	OscControlHandle( OSCAddress address, IoController* io, bool canBeInverted = false );
 	~OscControlHandle();
 
 	bool matches( OSCMessage message ) override;

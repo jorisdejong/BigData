@@ -34,7 +34,12 @@ void OscInputAdapter::oscMessageReceived( const OSCMessage & message )
 	for ( ControlHandle* handle : controller->getControlHandles() )
 	{
 		if ( handle->matches( message ) )
-			controller->update( handle, getFloatValue( message ) );
+		{
+			float value = getFloatValue( message );
+			if ( handle->isInverted() )
+				value = 1.0f - value;
+			controller->update( handle, value );
+		}
 	}
 }
 
