@@ -1,18 +1,18 @@
 /*
   ==============================================================================
 
-    VirtualFixture.cpp
-    Created: 22 Mar 2017 7:02:08pm
-    Author:  Joris
+	VirtualFixture.cpp
+	Created: 22 Mar 2017 7:02:08pm
+	Author:  Joris
 
   ==============================================================================
 */
 
 #include "Fixture.h"
 
-Fixture::Fixture()
-  {
-  }
+Fixture::Fixture( String name ) : name( name )
+{
+}
 
 Fixture::~Fixture()
 {

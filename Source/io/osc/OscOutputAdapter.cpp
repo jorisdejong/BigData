@@ -18,7 +18,6 @@ OscOutputAdapter::OscOutputAdapter( String hostname, int port )
 
 OscOutputAdapter::~OscOutputAdapter()
 {
-	disconnect();
 }
 
 void OscOutputAdapter::sendMessage( OSCMessage m )

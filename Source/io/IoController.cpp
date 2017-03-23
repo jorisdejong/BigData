@@ -1,29 +1,31 @@
 /*
   ==============================================================================
 
-    IoController.cpp
-    Created: 22 Mar 2017 7:03:21pm
-    Author:  Joris
+	IoController.cpp
+	Created: 22 Mar 2017 7:03:21pm
+	Author:  Joris
 
   ==============================================================================
 */
 
 #include "IoController.h"
 
-IoController::IoController()
-  {
-  }
-
-IoController::~IoController()
+IoController::IoController( InputAdapter* input, OutputAdapter* output ) : input ( input ), output ( output )
 {
 }
 
-InputAdapter * IoController::getInput()
+IoController::~IoController()
+{
+	input = nullptr;
+	output = nullptr;
+}
+
+InputAdapter* IoController::getInput()
 {
 	return input;
 }
 
-OutputAdapter * IoController::getOutput()
+OutputAdapter* IoController::getOutput()
 {
 	return output;
 }

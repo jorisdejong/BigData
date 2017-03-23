@@ -17,7 +17,7 @@ class OutputAdapter
 {
 public:
 	OutputAdapter();
-	~OutputAdapter();
+	virtual ~OutputAdapter();
 
 	virtual void sendMessage( OSCMessage m );
 	virtual void sendMessage( MidiMessage m );

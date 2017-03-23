@@ -1,9 +1,9 @@
 /*
   ==============================================================================
 
-    FixtureController.h
-    Created: 22 Mar 2017 7:04:53pm
-    Author:  Joris
+	FixtureController.h
+	Created: 22 Mar 2017 7:04:53pm
+	Author:  Joris
 
 	FixtureController is the boss of the bunch
 	it keeps track of all the fixtures and their params
@@ -33,7 +33,6 @@ public:
 	void addFixture( Fixture* newFixture );
 
 	const Array<ControlHandle*> getControlHandles();
-
 	void update( ControlHandle* handle, float value );
 	void process();
 
@@ -42,7 +41,9 @@ private:
 	OwnedArray<Fixture> fixtures;
 
 	CriticalSection lock;
-	std::map<ControlHandle*,float> updatedHandles;
+	std::map<ControlHandle*, float> updatedHandles;
+
+	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR( FixtureController )
 };
 
 

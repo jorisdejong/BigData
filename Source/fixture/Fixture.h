@@ -21,7 +21,7 @@
 class Fixture
 {
 public:
-	Fixture();
+	Fixture( String name );
 	~Fixture();
 
 	void addParameter( FixtureParameter* newParam );
@@ -29,6 +29,7 @@ public:
 
 private:
 	OwnedArray<FixtureParameter> params;
+	String name;
 
 };
 

@@ -23,7 +23,7 @@ class ControlHandle
 {
 public:
 	ControlHandle();
-	~ControlHandle();
+	virtual ~ControlHandle();
 
 	virtual bool matches( OSCMessage m );
 	virtual bool matches( MidiMessage m );
@@ -33,12 +33,15 @@ public:
 
 	virtual void update( float value ) = 0;
 
+	void setIoController( IoController* newIo );
+
 protected:
 	IoController* controller;
 
 private:
 	FixtureParameter* parameter;
 
+	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR( ControlHandle )
 };
 
 

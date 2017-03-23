@@ -21,7 +21,7 @@
 class FixtureParameter
 {
 public:
-	FixtureParameter();
+	FixtureParameter( String name );
 	~FixtureParameter();
 
 	void update( float value, ControlHandle* source );
@@ -33,6 +33,7 @@ public:
 
 private:
 	OwnedArray<ControlHandle> handles;
+	String name;
 	
 };
 

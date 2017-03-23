@@ -17,8 +17,10 @@ class InputAdapter
 {
 public:
 	InputAdapter();
-	~InputAdapter();
+	virtual ~InputAdapter();
 
+private:
+	
 };
 
 

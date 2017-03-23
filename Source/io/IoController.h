@@ -1,9 +1,9 @@
 /*
   ==============================================================================
 
-    IoController.h
-    Created: 22 Mar 2017 7:03:21pm
-    Author:  Joris
+	IoController.h
+	Created: 22 Mar 2017 7:03:21pm
+	Author:  Joris
 
 	IoController ties an input and an output together
 
@@ -21,7 +21,7 @@
 class IoController
 {
 public:
-	IoController();
+	IoController( InputAdapter* input, OutputAdapter* output );
 	~IoController();
 
 	InputAdapter* getInput();
