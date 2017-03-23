@@ -49,17 +49,16 @@ const Array<ControlHandle*> FixtureController::getControlHandles()
 	Array<ControlHandle*> handles;
 
 	for ( Fixture* fixture : fixtures )
-	{
 		for ( auto param : fixture->getParams() )
-		{
 			for ( auto handle : param->getHandles() )
-			{
 				handles.add( handle );
-			}
-		}
-	}
 
 	return handles;
+}
+
+const OwnedArray<Fixture>& FixtureController::getFixtures()
+{
+	return fixtures;
 }
 
 void FixtureController::update( ControlHandle* handle, float value )

@@ -35,6 +35,8 @@ public:
 	void addIo( IoController* newController );
 
 	const Array<ControlHandle*> getControlHandles();
+	const OwnedArray<Fixture>& getFixtures();
+
 	void update( ControlHandle* handle, float value );
 	void process();
 

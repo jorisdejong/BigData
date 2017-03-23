@@ -27,3 +27,8 @@ const OwnedArray<FixtureParameter>& Fixture::getParams()
 {
 	return params;
 }
+
+String Fixture::getName()
+{
+	return name;
+}

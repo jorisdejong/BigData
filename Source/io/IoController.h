@@ -27,6 +27,8 @@ public:
 	InputAdapter* getInput();
 	OutputAdapter* getOutput();
 
+	String getName();
+
 private:
 	String name;
 	ScopedPointer<InputAdapter> input;

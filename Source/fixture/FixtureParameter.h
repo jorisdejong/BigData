@@ -31,6 +31,8 @@ public:
 
 	juce::Uuid uniqueId;
 
+	String getName();
+
 private:
 	OwnedArray<ControlHandle> handles;
 	String name;

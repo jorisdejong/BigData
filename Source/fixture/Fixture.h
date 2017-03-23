@@ -27,6 +27,7 @@ public:
 	void addParameter( FixtureParameter* newParam );
 	const OwnedArray<FixtureParameter>& getParams();
 
+	String getName();
 private:
 	OwnedArray<FixtureParameter> params;
 	String name;

@@ -29,3 +29,8 @@ OutputAdapter* IoController::getOutput()
 {
 	return output;
 }
+
+String IoController::getName()
+{
+	return name;
+}

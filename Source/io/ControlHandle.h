@@ -40,6 +40,9 @@ public:
 	void setInverted( bool state );
 	bool isInverted();
 
+	//hacky way to determine the position of the ui for this handle
+	String getControllerName();
+
 protected:
 	IoController* controller;
 

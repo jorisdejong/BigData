@@ -41,6 +41,11 @@ const OwnedArray<ControlHandle>& FixtureParameter::getHandles()
 	return handles;
 }
 
+String FixtureParameter::getName()
+{
+	return name;
+}
+
 const bool operator<( const FixtureParameter& lhs, const FixtureParameter& rhs )
 {
 	return (lhs.uniqueId.getRawData() < rhs.uniqueId.getRawData());

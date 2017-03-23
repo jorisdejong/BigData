@@ -64,4 +64,9 @@ bool ControlHandle::isInverted()
 	return invert;
 }
 
+String ControlHandle::getControllerName()
+{
+	return controller->getName();
+}
+
 

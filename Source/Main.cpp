@@ -29,9 +29,9 @@ public:
     //==============================================================================
     void initialise (const String&) override
     {
-        mainWindow = new MainWindow (getApplicationName());
-
 		Hardcoded::create();
+
+        mainWindow = new MainWindow (getApplicationName());
 
 		//start running the timer that will process the incoming commands
 		startTimerHz( 60 );

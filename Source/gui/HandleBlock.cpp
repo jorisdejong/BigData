@@ -22,22 +22,17 @@ HandleBlock::HandleBlock( ControlHandle* handle ) : handle( handle )
 	invertButton = new TextButton( "I" );
 	invertButton->addListener( this );
 	invertButton->setClickingTogglesState( true );
-	addAndMakeVisible( invertButton );
+	if ( handle->canBeInverted() )
+		addAndMakeVisible( invertButton );
 }
 
 HandleBlock::~HandleBlock()
 {
 }
 
-void HandleBlock::paint (Graphics& g)
+void HandleBlock::paint (Graphics& )
 {
-    g.setColour (Colours::grey);
-    g.drawRect (getLocalBounds(), 1);   // draw an outline around the component
-
-    g.setColour (Colours::lightblue);
-    g.setFont (14.0f);
-    g.drawText ("HandleBlock", getLocalBounds(),
-                Justification::centred, true);   // draw some placeholder text
+ 
 }
 
 void HandleBlock::resized()
