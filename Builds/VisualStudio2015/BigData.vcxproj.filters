@@ -265,6 +265,9 @@
     <ClCompile Include="..\..\Source\fixture\Fixture.cpp">
       <Filter>BigData\Source\fixture</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\gui\HandleBlock.cpp">
+      <Filter>BigData\Source\gui</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\io\midi\MidiControlHandle.cpp">
       <Filter>BigData\Source\io\midi</Filter>
     </ClCompile>
@@ -1589,6 +1592,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\fixture\Fixture.h">
       <Filter>BigData\Source\fixture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\gui\HandleBlock.h">
+      <Filter>BigData\Source\gui</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\io\midi\MidiControlHandle.h">
       <Filter>BigData\Source\io\midi</Filter>

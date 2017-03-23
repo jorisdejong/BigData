@@ -21,7 +21,10 @@
         <FILE id="oLmSR3" name="Fixture.cpp" compile="1" resource="0" file="Source/fixture/Fixture.cpp"/>
         <FILE id="iDdTRR" name="Fixture.h" compile="0" resource="0" file="Source/fixture/Fixture.h"/>
       </GROUP>
-      <GROUP id="{EA6CE18B-8C76-A5FF-EE68-BF5DB76BEF96}" name="gui"/>
+      <GROUP id="{EA6CE18B-8C76-A5FF-EE68-BF5DB76BEF96}" name="gui">
+        <FILE id="K8QSm2" name="HandleBlock.cpp" compile="1" resource="0" file="Source/gui/HandleBlock.cpp"/>
+        <FILE id="IBIq8B" name="HandleBlock.h" compile="0" resource="0" file="Source/gui/HandleBlock.h"/>
+      </GROUP>
       <GROUP id="{43E4F080-9A70-F1FC-5A5B-CFE52B6938E6}" name="io">
         <GROUP id="{F4A7292D-6AA4-E240-3331-1CD8683AE82F}" name="midi">
           <FILE id="jetoEh" name="MidiControlHandle.cpp" compile="1" resource="0"
