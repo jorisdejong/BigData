@@ -71,8 +71,7 @@ void FixtureController::process()
 {
 	const ScopedLock lockHere( lock );
 	for ( auto handle : updatedHandles )
-		if ( handle.first->isLinked() )
-			handle.first->getParameter()->update( handle.second, handle.first );
+		handle.first->getParameter()->update( handle.second, handle.first );
 	
 	updatedHandles.clear();
 }

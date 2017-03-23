@@ -13,29 +13,42 @@
 //==============================================================================
 MainContentComponent::MainContentComponent()
 {
-	setSize( 600, 1400 );
+	lookAndFeel = new BigDataLookAndFeel();
+	setLookAndFeel( lookAndFeel );
+	setSize( 600, 1200 );
 
-	float y = 0.05f;
+	float y = 0.04f;
 	//create items for each fixtureparam
 	for ( Fixture* fixture : FixtureController::getInstance()->getFixtures() )
 	{
-		Label* label = new Label( fixture->getName(), fixture->getName() );
-		addAndMakeVisible( label );
-		label->setColour( Label::textColourId, Colours::white );
-		label->setFont( label->getFont().withHeight( 32.0f ) );
-		label->setJustificationType( Justification::centred );
-		label->setSize( 100, 40 );
-		label->setCentreRelative( 0.5f, y );
+		y += 0.01f;
 
-		y += 0.04f;
+		Label* fixtureLabel = new Label( fixture->getName(), fixture->getName() );
+		addAndMakeVisible( fixtureLabel );
+		fixtureLabel->setColour( Label::textColourId, Colours::white );
+		fixtureLabel->setFont( Font("Impact", 35.0f, Font::plain ));
+		fixtureLabel->setJustificationType( Justification::centred );
+		fixtureLabel->setSize( 100, 40 );
+		fixtureLabel->setCentreRelative( 0.5f, y );
+		components.add( fixtureLabel );
+
+		y += 0.03f;
+
 		for ( FixtureParameter* param : fixture->getParams() )
 		{
-			label = new Label( param->getName(), param->getName() );
-			addAndMakeVisible( label );
-			label->setColour( Label::textColourId, Colours::white );
-			label->setJustificationType( Justification::centred );
-			label->setSize( 100, 40 );
-			label->setCentreRelative( 0.5f, y );
+			/*Label* paramLabel = new Label( param->getName(), param->getName() );
+			addAndMakeVisible( paramLabel );
+			paramLabel->setColour( Label::textColourId, Colours::white );
+			paramLabel->setJustificationType( Justification::centred );
+			paramLabel->setSize( 100, 40 );
+			paramLabel->setCentreRelative( 0.5f, y );
+			components.add( paramLabel );*/
+			ParamSlider* slider = new ParamSlider( param->getName() );
+			addAndMakeVisible( slider );
+			slider->setSize( 120, 40 );
+			slider->setCentreRelative( 0.5f, y );
+			components.add( slider );
+			param->setSlider( slider );
 
 			for ( ControlHandle* handle : param->getHandles() )
 			{
@@ -46,6 +59,7 @@ MainContentComponent::MainContentComponent()
 					block->setCentreRelative( 0.25f, y );
 				else
 					block->setCentreRelative( 0.75f, y );
+				components.add( block );
 			}
 			y += 0.03f;
 		}
@@ -64,7 +78,5 @@ void MainContentComponent::paint( Graphics& g )
 
 void MainContentComponent::resized()
 {
-	// This is called when the MainContentComponent is resized.
-	// If you add any child components, this is where you should
-	// update their positions.
+	
 }

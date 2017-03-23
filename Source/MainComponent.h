@@ -10,6 +10,8 @@
 #define MAINCOMPONENT_H_INCLUDED
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "gui/BigDataLookAndFeel.h"
+#include "gui/ParamSlider.h"
 
 
 //==============================================================================
@@ -29,6 +31,8 @@ public:
     void resized() override;
 
 private:
+	ScopedPointer<BigDataLookAndFeel> lookAndFeel;
+	OwnedArray<Component> components;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainContentComponent)
 };

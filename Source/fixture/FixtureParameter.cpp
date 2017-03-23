@@ -15,6 +15,7 @@
 FixtureParameter::FixtureParameter( String name ) : name ( name )
 {
 	uniqueId = juce::Uuid();
+	slider = nullptr;
 }
 
 FixtureParameter::~FixtureParameter()
@@ -26,7 +27,10 @@ void FixtureParameter::update( float newValue, ControlHandle* source )
 {
 	for ( ControlHandle* handle : handles )
 		//if ( handle != source ) //no feedback
-			handle->update( newValue );
+		if ( handle->isLinked() )
+			handle->update( newValue ); 
+	if ( slider )
+		slider->update( newValue );
 }
 
 void FixtureParameter::addHandle( ControlHandle * newHandle )
@@ -44,6 +48,11 @@ const OwnedArray<ControlHandle>& FixtureParameter::getHandles()
 String FixtureParameter::getName()
 {
 	return name;
+}
+
+void FixtureParameter::setSlider( ParamSlider * newSlider )
+{
+	slider = newSlider;
 }
 
 const bool operator<( const FixtureParameter& lhs, const FixtureParameter& rhs )

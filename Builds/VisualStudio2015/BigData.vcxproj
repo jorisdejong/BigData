@@ -134,7 +134,9 @@
     <ClCompile Include="..\..\Source\fixture\FixtureController.cpp"/>
     <ClCompile Include="..\..\Source\fixture\FixtureParameter.cpp"/>
     <ClCompile Include="..\..\Source\fixture\Fixture.cpp"/>
+    <ClCompile Include="..\..\Source\gui\BigDataLookAndFeel.cpp"/>
     <ClCompile Include="..\..\Source\gui\HandleBlock.cpp"/>
+    <ClCompile Include="..\..\Source\gui\ParamSlider.cpp"/>
     <ClCompile Include="..\..\Source\io\midi\MidiControlHandle.cpp"/>
     <ClCompile Include="..\..\Source\io\osc\OscControlHandle.cpp"/>
     <ClCompile Include="..\..\Source\io\osc\OscInputAdapter.cpp"/>
@@ -1347,7 +1349,9 @@
     <ClInclude Include="..\..\Source\fixture\FixtureController.h"/>
     <ClInclude Include="..\..\Source\fixture\FixtureParameter.h"/>
     <ClInclude Include="..\..\Source\fixture\Fixture.h"/>
+    <ClInclude Include="..\..\Source\gui\BigDataLookAndFeel.h"/>
     <ClInclude Include="..\..\Source\gui\HandleBlock.h"/>
+    <ClInclude Include="..\..\Source\gui\ParamSlider.h"/>
     <ClInclude Include="..\..\Source\io\midi\MidiControlHandle.h"/>
     <ClInclude Include="..\..\Source\io\osc\OscControlHandle.h"/>
     <ClInclude Include="..\..\Source\io\osc\OscInputAdapter.h"/>

@@ -17,11 +17,15 @@ HandleBlock::HandleBlock( ControlHandle* handle ) : handle( handle )
 	linkButton = new TextButton( "Link" );
 	linkButton->addListener( this );
 	linkButton->setClickingTogglesState( true );
+	linkButton->setColour( TextButton::buttonColourId, Colours::grey.withMultipliedBrightness( 0.1f ) );
+	linkButton->setColour( TextButton::buttonOnColourId, Colours::red );
 	addAndMakeVisible( linkButton );
 
 	invertButton = new TextButton( "I" );
 	invertButton->addListener( this );
 	invertButton->setClickingTogglesState( true );
+	invertButton->setColour( TextButton::buttonColourId, Colours::grey.withMultipliedBrightness( 0.1f ) );
+	invertButton->setColour( TextButton::buttonOnColourId, Colours::red );
 	if ( handle->canBeInverted() )
 		addAndMakeVisible( invertButton );
 }

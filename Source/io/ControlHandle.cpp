@@ -13,6 +13,7 @@
 ControlHandle::ControlHandle( IoController* io, bool canBeInverted ) : controller( io ), invertable( canBeInverted )
 {
 	linked = false;
+	invert = false;
 }
 
 ControlHandle::~ControlHandle()
