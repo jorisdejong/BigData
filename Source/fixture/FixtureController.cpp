@@ -39,6 +39,11 @@ void FixtureController::addFixture( Fixture * newFixture )
 	fixtures.add( newFixture );
 }
 
+void FixtureController::addIo( IoController * newController )
+{
+	ioControllers.add( newController );
+}
+
 const Array<ControlHandle*> FixtureController::getControlHandles()
 {
 	Array<ControlHandle*> handles;

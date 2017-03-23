@@ -31,6 +31,8 @@ public:
 	static void destroyInstance();
 
 	void addFixture( Fixture* newFixture );
+	
+	void addIo( IoController* newController );
 
 	const Array<ControlHandle*> getControlHandles();
 	void update( ControlHandle* handle, float value );
@@ -39,7 +41,7 @@ public:
 private:
 	static FixtureController* instance;
 	OwnedArray<Fixture> fixtures;
-
+	OwnedArray<IoController> ioControllers;
 	CriticalSection lock;
 	std::map<ControlHandle*, float> updatedHandles;
 
