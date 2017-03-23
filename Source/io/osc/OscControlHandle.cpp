@@ -12,7 +12,7 @@
 
 OscControlHandle::OscControlHandle( OSCAddress address ) : oscAddress( address )
 {
-	
+	type = juce::OSCTypes::float32;
 }
 
 OscControlHandle::~OscControlHandle()
@@ -26,6 +26,6 @@ bool OscControlHandle::matches( juce::OSCMessage message )
 
 void OscControlHandle::update( float value )
 {
-	juce::OSCMessage m( oscAddress.toString(), value );
+	juce::OSCMessage m( oscAddress.toString(), type == juce::OSCTypes::int32 ? (int) value : value );
 	controller->getOutput()->sendMessage( m );
 }

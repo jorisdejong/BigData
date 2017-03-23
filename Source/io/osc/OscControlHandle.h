@@ -27,6 +27,7 @@ public:
 
 private:
 	OSCAddress oscAddress;
+	OSCType type;
 };
 
 

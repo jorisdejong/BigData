@@ -30,5 +30,6 @@
 
 *.suo
 *.db
+*.VC.VC.opendb
 
 Debug/

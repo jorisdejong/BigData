@@ -11,6 +11,22 @@
 #ifndef OSCOUTPUTADAPTER_H_INCLUDED
 #define OSCOUTPUTADAPTER_H_INCLUDED
 
+#include "../OutputAdapter.h"
+
+class OscOutputAdapter :
+	public OutputAdapter,
+	public juce::OSCSender
+{
+public:
+	OscOutputAdapter( String hostname, int port );
+	~OscOutputAdapter();
+
+	void sendMessage( OSCMessage m ) override;
+
+private:
+
+
+};
 
 
 
