@@ -33,6 +33,9 @@ public:
 private:
 	ScopedPointer<BigDataLookAndFeel> lookAndFeel;
 	OwnedArray<Component> components;
+
+	ScopedPointer<TextButton> videoSetup;
+	ScopedPointer<TextButton> laserSetup;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainContentComponent)
 };

@@ -20,6 +20,7 @@ MainContentComponent::MainContentComponent()
 	int w = getWidth();
 	float h = (float) getHeight();
 
+
 	float y = 48 / h;
 	//create items for each fixtureparam
 	for ( Fixture* fixture : FixtureController::getInstance()->getFixtures() )
@@ -61,6 +62,15 @@ MainContentComponent::MainContentComponent()
 			y += (ch * 0.9f) / h;
 		}
 	}
+
+	//add setup buttons
+	videoSetup = new TextButton( "Video" );
+	addAndMakeVisible( videoSetup );
+	videoSetup->setBoundsRelative( 0.25f, y, 0.06f, 0.03f );
+	laserSetup = new TextButton( "Laser" );
+	addAndMakeVisible( laserSetup );
+	laserSetup->setBoundsRelative( 0.75f, y, 0.06f, 0.03f );
+	
 }
 
 MainContentComponent::~MainContentComponent()
