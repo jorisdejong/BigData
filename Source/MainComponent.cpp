@@ -15,37 +15,34 @@ MainContentComponent::MainContentComponent()
 {
 	lookAndFeel = new BigDataLookAndFeel();
 	setLookAndFeel( lookAndFeel );
-	setSize( 600, 1200 );
+	setSize( 300, 600 );
 
-	float y = 0.04f;
+	int w = getWidth();
+	float h = (float) getHeight();
+
+	float y = 48 / h;
 	//create items for each fixtureparam
 	for ( Fixture* fixture : FixtureController::getInstance()->getFixtures() )
 	{
-		y += 0.01f;
+		y += 12 / h;
+		int ch = int( 0.03f * h );
 
 		Label* fixtureLabel = new Label( fixture->getName(), fixture->getName() );
 		addAndMakeVisible( fixtureLabel );
 		fixtureLabel->setColour( Label::textColourId, Colours::white );
-		fixtureLabel->setFont( Font("Impact", 35.0f, Font::plain ));
+		fixtureLabel->setFont( Font( "Impact", 0.03f * h, Font::plain ) );
 		fixtureLabel->setJustificationType( Justification::centred );
-		fixtureLabel->setSize( 100, 40 );
+		fixtureLabel->setSize( int( 0.16667 * w ), ch );
 		fixtureLabel->setCentreRelative( 0.5f, y );
 		components.add( fixtureLabel );
 
-		y += 0.03f;
+		y += (ch * 0.9f) / h;
 
 		for ( FixtureParameter* param : fixture->getParams() )
 		{
-			/*Label* paramLabel = new Label( param->getName(), param->getName() );
-			addAndMakeVisible( paramLabel );
-			paramLabel->setColour( Label::textColourId, Colours::white );
-			paramLabel->setJustificationType( Justification::centred );
-			paramLabel->setSize( 100, 40 );
-			paramLabel->setCentreRelative( 0.5f, y );
-			components.add( paramLabel );*/
 			ParamSlider* slider = new ParamSlider( param->getName() );
 			addAndMakeVisible( slider );
-			slider->setSize( 120, 40 );
+			slider->setSize( int( 0.2 * w ), ch );
 			slider->setCentreRelative( 0.5f, y );
 			components.add( slider );
 			param->setSlider( slider );
@@ -54,14 +51,14 @@ MainContentComponent::MainContentComponent()
 			{
 				HandleBlock* block = new HandleBlock( handle );
 				addAndMakeVisible( block );
-				block->setSize( 100, 40 );
+				block->setSize( int( 0.16667 * w ), ch );
 				if ( handle->getControllerName() == "Video" )
 					block->setCentreRelative( 0.25f, y );
 				else
 					block->setCentreRelative( 0.75f, y );
 				components.add( block );
 			}
-			y += 0.03f;
+			y += (ch * 0.9f) / h;
 		}
 	}
 }
@@ -78,5 +75,5 @@ void MainContentComponent::paint( Graphics& g )
 
 void MainContentComponent::resized()
 {
-	
+
 }

@@ -33,3 +33,4 @@
 *.VC.VC.opendb
 
 Debug/
+enc_temp_folder/
