@@ -283,6 +283,9 @@
     <ClCompile Include="..\..\Source\io\osc\OscInputAdapter.cpp">
       <Filter>BigData\Source\io\osc</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\io\osc\OscInputSetupComponent.cpp">
+      <Filter>BigData\Source\io\osc</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\io\osc\OscOutputAdapter.cpp">
       <Filter>BigData\Source\io\osc</Filter>
     </ClCompile>
@@ -296,6 +299,9 @@
       <Filter>BigData\Source\io</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\io\OutputAdapter.cpp">
+      <Filter>BigData\Source\io</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\io\SetupComponent.cpp">
       <Filter>BigData\Source\io</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\MainComponent.cpp">
@@ -1617,6 +1623,9 @@
     <ClInclude Include="..\..\Source\io\osc\OscInputAdapter.h">
       <Filter>BigData\Source\io\osc</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\io\osc\OscInputSetupComponent.h">
+      <Filter>BigData\Source\io\osc</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\io\osc\OscOutputAdapter.h">
       <Filter>BigData\Source\io\osc</Filter>
     </ClInclude>
@@ -1630,6 +1639,9 @@
       <Filter>BigData\Source\io</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\io\OutputAdapter.h">
+      <Filter>BigData\Source\io</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\io\SetupComponent.h">
       <Filter>BigData\Source\io</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\MainComponent.h">

@@ -34,3 +34,18 @@ String IoController::getName()
 {
 	return name;
 }
+
+void IoController::showSetupComponent()
+{
+	Component* setupComponent = new Component();
+	if ( input )
+	{
+		Component* inputSetup = input->getSetupComponent();
+		setupComponent->addAndMakeVisible( inputSetup );
+		inputSetup->setTopLeftPosition( 0, 0 );
+
+		setupComponent->setSize( inputSetup->getBounds().getWidth(), inputSetup->getBounds().getHeight() );
+	}
+	TopLevelWindow::getActiveTopLevelWindow()->getChildComponent(0)->addAndMakeVisible( setupComponent );
+	setupComponent->setCentreRelative( 0.5f, 0.5f );
+}

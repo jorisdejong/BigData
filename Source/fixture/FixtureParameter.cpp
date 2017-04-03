@@ -12,7 +12,7 @@
 
 
 
-FixtureParameter::FixtureParameter( String name ) : name ( name )
+FixtureParameter::FixtureParameter( String name ) : name( name )
 {
 	uniqueId = juce::Uuid();
 	slider = nullptr;
@@ -26,9 +26,9 @@ FixtureParameter::~FixtureParameter()
 void FixtureParameter::update( float newValue, ControlHandle* source )
 {
 	for ( ControlHandle* handle : handles )
-		//if ( handle != source ) //no feedback
-		if ( handle->isLinked() )
-			handle->update( newValue ); 
+		if ( handle != source ) //no feedback
+			if ( handle->isLinked() )
+				handle->update( newValue );
 	if ( slider )
 		slider->update( newValue );
 }

@@ -17,3 +17,8 @@ InputAdapter::InputAdapter()
 InputAdapter::~InputAdapter()
 {
 }
+
+void InputAdapter::set( int port )
+{
+	//virtual
+}

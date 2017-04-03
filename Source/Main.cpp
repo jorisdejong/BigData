@@ -30,6 +30,7 @@ public:
     void initialise (const String&) override
     {
 		Hardcoded::create();
+		Hardcoded::assignOsc( "127.0.0.1", 7000 );
 
         mainWindow = new MainWindow (getApplicationName());
 

@@ -12,7 +12,9 @@
 #define OSCINPUTADAPTER_H_INCLUDED
 
 #include "../InputAdapter.h"
+#include "OscInputSetupComponent.h"
 #include "JuceHeader.h"
+
 
 class OscInputAdapter :
 	public InputAdapter,
@@ -20,15 +22,24 @@ class OscInputAdapter :
 	public juce::OSCReceiver::Listener<OSCReceiver::RealtimeCallback>
 {
 public:
-	OscInputAdapter( int port );
+	OscInputAdapter();
 	~OscInputAdapter();
 
+	void set( int port ) override;
+
 	void oscMessageReceived( const OSCMessage& message ) override;
+
+	int getPort();
+	Component* getSetupComponent() override;
+
 	
 private:
 	/* will return -1.0f if the message was not float or int
 	otherwise it will return the first argument as float */
 	float getFloatValue( const OSCMessage& m );
+	int port;
+
+	ScopedPointer<OscInputSetupComponent> inputSetup;
 };
 
 

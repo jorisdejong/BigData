@@ -67,9 +67,12 @@ MainContentComponent::MainContentComponent()
 	videoSetup = new TextButton( "Video" );
 	addAndMakeVisible( videoSetup );
 	videoSetup->setBoundsRelative( 0.25f, y, 0.06f, 0.03f );
+	videoSetup->addListener( this );
 	laserSetup = new TextButton( "Laser" );
 	addAndMakeVisible( laserSetup );
 	laserSetup->setBoundsRelative( 0.75f, y, 0.06f, 0.03f );
+
+	
 	
 }
 
@@ -86,4 +89,10 @@ void MainContentComponent::paint( Graphics& g )
 void MainContentComponent::resized()
 {
 
+}
+
+void MainContentComponent::buttonClicked( Button * )
+{
+	for ( IoController* controller : FixtureController::getInstance()->getControllers() )
+		controller->showSetupComponent();
 }

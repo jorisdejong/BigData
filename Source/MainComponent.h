@@ -20,7 +20,8 @@
     your controls and content.
 */
 class MainContentComponent   : 
-	public Component
+	public Component,
+	public Button::Listener
 {
 public:
     //==============================================================================
@@ -29,6 +30,8 @@ public:
 
     void paint (Graphics&) override;
     void resized() override;
+
+	void buttonClicked( Button* ) override;
 
 private:
 	ScopedPointer<BigDataLookAndFeel> lookAndFeel;

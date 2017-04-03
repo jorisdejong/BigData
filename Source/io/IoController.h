@@ -29,6 +29,8 @@ public:
 
 	String getName();
 
+	void showSetupComponent();
+
 private:
 	String name;
 	ScopedPointer<InputAdapter> input;

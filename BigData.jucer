@@ -47,6 +47,10 @@
                 file="Source/io/osc/OscInputAdapter.cpp"/>
           <FILE id="WTvlcn" name="OscInputAdapter.h" compile="0" resource="0"
                 file="Source/io/osc/OscInputAdapter.h"/>
+          <FILE id="jiTv0Q" name="OscInputSetupComponent.cpp" compile="1" resource="0"
+                file="Source/io/osc/OscInputSetupComponent.cpp"/>
+          <FILE id="g6jwmO" name="OscInputSetupComponent.h" compile="0" resource="0"
+                file="Source/io/osc/OscInputSetupComponent.h"/>
           <FILE id="JvaL8L" name="OscOutputAdapter.cpp" compile="1" resource="0"
                 file="Source/io/osc/OscOutputAdapter.cpp"/>
           <FILE id="ALTgyQ" name="OscOutputAdapter.h" compile="0" resource="0"
@@ -64,6 +68,10 @@
         <FILE id="zLobld" name="OutputAdapter.cpp" compile="1" resource="0"
               file="Source/io/OutputAdapter.cpp"/>
         <FILE id="eoNf36" name="OutputAdapter.h" compile="0" resource="0" file="Source/io/OutputAdapter.h"/>
+        <FILE id="ioneYb" name="SetupComponent.cpp" compile="1" resource="0"
+              file="Source/io/SetupComponent.cpp"/>
+        <FILE id="q3GIpI" name="SetupComponent.h" compile="0" resource="0"
+              file="Source/io/SetupComponent.h"/>
       </GROUP>
       <FILE id="guVWwS" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>

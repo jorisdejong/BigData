@@ -11,21 +11,30 @@
 #include "OscInputAdapter.h"
 #include "../../fixture/FixtureController.h"
 
-OscInputAdapter::OscInputAdapter( int port )
+
+OscInputAdapter::OscInputAdapter( )
 {
-	if ( connect( port ) )
-	{
-		addListener( this );
-		DBG( "Started listening to OSC messages on " + String( port ) );
-	}
-	else
-		DBG( "Could not create OSC input on port " + String( port ) );
+	port = -1;
+	inputSetup = nullptr;
 }
 
 OscInputAdapter::~OscInputAdapter()
 {
 	if ( disconnect() )
 		DBG( "Stopped listening to OSC messages" );
+}
+
+void OscInputAdapter::set( int newPort ) 
+{
+	if ( connect( newPort ) )
+	{
+		port = newPort;
+
+		addListener( this );
+		DBG( "Started listening to OSC messages on " + String( port ) );
+	}
+	else
+		DBG( "Could not create OSC input on port " + String( newPort ) );
 }
 
 void OscInputAdapter::oscMessageReceived( const OSCMessage & message )
@@ -41,6 +50,21 @@ void OscInputAdapter::oscMessageReceived( const OSCMessage & message )
 			controller->update( handle, value );
 		}
 	}
+}
+
+int OscInputAdapter::getPort()
+{
+	return port;
+}
+
+Component* OscInputAdapter::getSetupComponent()
+{
+	if ( !inputSetup )
+	{
+		inputSetup = new OscInputSetupComponent( *this );
+		inputSetup->setSize( 200, 50 );
+	}
+	return inputSetup;
 }
 
 float OscInputAdapter::getFloatValue( const OSCMessage & m )

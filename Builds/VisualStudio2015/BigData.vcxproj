@@ -140,11 +140,13 @@
     <ClCompile Include="..\..\Source\io\midi\MidiControlHandle.cpp"/>
     <ClCompile Include="..\..\Source\io\osc\OscControlHandle.cpp"/>
     <ClCompile Include="..\..\Source\io\osc\OscInputAdapter.cpp"/>
+    <ClCompile Include="..\..\Source\io\osc\OscInputSetupComponent.cpp"/>
     <ClCompile Include="..\..\Source\io\osc\OscOutputAdapter.cpp"/>
     <ClCompile Include="..\..\Source\io\ControlHandle.cpp"/>
     <ClCompile Include="..\..\Source\io\InputAdapter.cpp"/>
     <ClCompile Include="..\..\Source\io\IoController.cpp"/>
     <ClCompile Include="..\..\Source\io\OutputAdapter.cpp"/>
+    <ClCompile Include="..\..\Source\io\SetupComponent.cpp"/>
     <ClCompile Include="..\..\Source\MainComponent.cpp"/>
     <ClCompile Include="..\..\Source\Main.cpp"/>
     <ClCompile Include="..\..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.cpp">
@@ -1355,11 +1357,13 @@
     <ClInclude Include="..\..\Source\io\midi\MidiControlHandle.h"/>
     <ClInclude Include="..\..\Source\io\osc\OscControlHandle.h"/>
     <ClInclude Include="..\..\Source\io\osc\OscInputAdapter.h"/>
+    <ClInclude Include="..\..\Source\io\osc\OscInputSetupComponent.h"/>
     <ClInclude Include="..\..\Source\io\osc\OscOutputAdapter.h"/>
     <ClInclude Include="..\..\Source\io\ControlHandle.h"/>
     <ClInclude Include="..\..\Source\io\InputAdapter.h"/>
     <ClInclude Include="..\..\Source\io\IoController.h"/>
     <ClInclude Include="..\..\Source\io\OutputAdapter.h"/>
+    <ClInclude Include="..\..\Source\io\SetupComponent.h"/>
     <ClInclude Include="..\..\Source\MainComponent.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioDataConverters.h"/>

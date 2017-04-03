@@ -36,6 +36,7 @@ public:
 
 	const Array<ControlHandle*> getControlHandles();
 	const OwnedArray<Fixture>& getFixtures();
+	const OwnedArray<IoController>& getControllers();
 
 	void update( ControlHandle* handle, float value );
 	void process();

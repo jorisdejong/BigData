@@ -61,6 +61,11 @@ const OwnedArray<Fixture>& FixtureController::getFixtures()
 	return fixtures;
 }
 
+const OwnedArray<IoController>& FixtureController::getControllers()
+{
+	return ioControllers;
+}
+
 void FixtureController::update( ControlHandle* handle, float value )
 {
 	const ScopedLock lockHere( lock );
