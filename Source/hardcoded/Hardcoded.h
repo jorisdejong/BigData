@@ -23,6 +23,8 @@ class Hardcoded
 {
 public:
 	static void create();
+	static void assignOsc( String outputIp, int port );
+	static void assignMidi( MidiInput* input, MidiOutput output );
 
 };
 
