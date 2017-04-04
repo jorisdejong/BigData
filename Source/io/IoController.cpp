@@ -35,17 +35,22 @@ String IoController::getName()
 	return name;
 }
 
-void IoController::showSetupComponent()
+void IoController::toggleSetupComponent()
 {
-	Component* setupComponent = new Component();
-	if ( input )
+	if ( !setup )
 	{
-		Component* inputSetup = input->getSetupComponent();
-		setupComponent->addAndMakeVisible( inputSetup );
-		inputSetup->setTopLeftPosition( 0, 0 );
+		setup = new Component();
+		if ( input )
+		{
+			Component* inputSetup = input->getSetupComponent();
+			setup->addAndMakeVisible( inputSetup );
+			inputSetup->setTopLeftPosition( 0, 0 );
 
-		setupComponent->setSize( inputSetup->getBounds().getWidth(), inputSetup->getBounds().getHeight() );
+			setup->setSize( inputSetup->getBounds().getWidth(), inputSetup->getBounds().getHeight() );
+		}
+		TopLevelWindow::getActiveTopLevelWindow()->getChildComponent( 0 )->addChildComponent( setup );
+		setup->setCentreRelative( 0.5f, 0.5f );
 	}
-	TopLevelWindow::getActiveTopLevelWindow()->getChildComponent(0)->addAndMakeVisible( setupComponent );
-	setupComponent->setCentreRelative( 0.5f, 0.5f );
+
+	setup->setVisible( !setup->isVisible() );
 }

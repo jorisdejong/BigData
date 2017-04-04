@@ -29,12 +29,14 @@ public:
 
 	String getName();
 
-	void showSetupComponent();
+	void toggleSetupComponent();
 
 private:
 	String name;
 	ScopedPointer<InputAdapter> input;
 	ScopedPointer<OutputAdapter> output;
+
+	ScopedPointer<Component> setup;
 
 };
 

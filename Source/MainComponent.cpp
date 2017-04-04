@@ -94,5 +94,5 @@ void MainContentComponent::resized()
 void MainContentComponent::buttonClicked( Button * )
 {
 	for ( IoController* controller : FixtureController::getInstance()->getControllers() )
-		controller->showSetupComponent();
+		controller->toggleSetupComponent();
 }
