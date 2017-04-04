@@ -301,9 +301,6 @@
     <ClCompile Include="..\..\Source\io\OutputAdapter.cpp">
       <Filter>BigData\Source\io</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\io\SetupComponent.cpp">
-      <Filter>BigData\Source\io</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\MainComponent.cpp">
       <Filter>BigData\Source</Filter>
     </ClCompile>
@@ -1639,9 +1636,6 @@
       <Filter>BigData\Source\io</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\io\OutputAdapter.h">
-      <Filter>BigData\Source\io</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\io\SetupComponent.h">
       <Filter>BigData\Source\io</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\MainComponent.h">

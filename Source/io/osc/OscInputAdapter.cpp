@@ -62,7 +62,7 @@ Component* OscInputAdapter::getSetupComponent()
 	if ( !inputSetup )
 	{
 		inputSetup = new OscInputSetupComponent( *this );
-		inputSetup->setSize( 200, 50 );
+		inputSetup->setSize( 200, 30 );
 	}
 	return inputSetup;
 }

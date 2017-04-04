@@ -146,7 +146,6 @@
     <ClCompile Include="..\..\Source\io\InputAdapter.cpp"/>
     <ClCompile Include="..\..\Source\io\IoController.cpp"/>
     <ClCompile Include="..\..\Source\io\OutputAdapter.cpp"/>
-    <ClCompile Include="..\..\Source\io\SetupComponent.cpp"/>
     <ClCompile Include="..\..\Source\MainComponent.cpp"/>
     <ClCompile Include="..\..\Source\Main.cpp"/>
     <ClCompile Include="..\..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.cpp">
@@ -1363,7 +1362,6 @@
     <ClInclude Include="..\..\Source\io\InputAdapter.h"/>
     <ClInclude Include="..\..\Source\io\IoController.h"/>
     <ClInclude Include="..\..\Source\io\OutputAdapter.h"/>
-    <ClInclude Include="..\..\Source\io\SetupComponent.h"/>
     <ClInclude Include="..\..\Source\MainComponent.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioChannelSet.h"/>
     <ClInclude Include="..\..\..\JUCE\modules\juce_audio_basics\buffers\juce_AudioDataConverters.h"/>

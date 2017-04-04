@@ -17,6 +17,7 @@ OscInputSetupComponent::OscInputSetupComponent( OscInputAdapter& adapter ) : ada
 {
 	label = new Label( "label", "Input Port:" );
 	addAndMakeVisible( label );
+	label->setColour( Label::ColourIds::textColourId, Colours::whitesmoke );
 	editor = new TextEditor();
 	editor->setInputRestrictions( 0, "0123456789" );
 	editor->addListener( this );
@@ -44,19 +45,15 @@ void OscInputSetupComponent::textEditorFocusLost( TextEditor &t )
 
 void OscInputSetupComponent::paint( Graphics& g )
 {
+	g.fillAll( Colours::black );
 	g.setColour( Colours::grey );
 	g.drawRect( getLocalBounds(), 1 );   // draw an outline around the component
-
-	g.setColour( Colours::lightblue );
-	g.setFont( 14.0f );
-	g.drawText( "OscInputSetupComponent", getLocalBounds(),
-		Justification::centred, true );   // draw some placeholder text
 }
 
 void OscInputSetupComponent::resized()
 {
-	label->setBoundsRelative( 0.0f, 0.0f, 0.25f, 1.0f );
-	editor->setBoundsRelative( 0.25f, 0.0f, 0.75f, 1.0f );
+	label->setBoundsRelative( 0.0f, 0.0f, 0.75f, 1.0f );
+	editor->setBoundsRelative( 0.75f, 0.0f, 0.25f, 1.0f );
 	editor->setText( String( adapter.getPort() ) );
 }
 
