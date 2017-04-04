@@ -22,7 +22,7 @@ public:
 	OscOutputAdapter();
 	~OscOutputAdapter();
 
-	void set( String hostname, int port ) override;
+	void set( String hostname, int port );
 	void sendMessage( OSCMessage m ) override;
 
 	Component* getSetupComponent() override;

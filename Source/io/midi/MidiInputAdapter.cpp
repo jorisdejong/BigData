@@ -13,6 +13,7 @@
 
 MidiInputAdapter::MidiInputAdapter()
 {
+	input = nullptr;
 }
 
 MidiInputAdapter::~MidiInputAdapter()
@@ -21,13 +22,13 @@ MidiInputAdapter::~MidiInputAdapter()
 
 void MidiInputAdapter::set( int newInput )
 {
-	if ( MidiInput::openDevice( newInput, this ) )
+	if ( input = juce::MidiInput::openDevice( newInput, this ) )
 		DBG( "Opened Midi port " + MidiInput::getDevices()[newInput] );
 	else
 		DBG( "Could not open Midi device" );
 }
 
-void MidiInputAdapter::handleIncomingMidiMessage( MidiInput *, const MidiMessage & message )
+void MidiInputAdapter::handleIncomingMidiMessage( juce::MidiInput *, const MidiMessage & message )
 {
 	FixtureController* controller = FixtureController::getInstance();
 	for ( ControlHandle* handle : controller->getControlHandles() )
@@ -48,4 +49,12 @@ void MidiInputAdapter::handleIncomingMidiMessage( MidiInput *, const MidiMessage
 Component * MidiInputAdapter::getSetupComponent()
 {
 	return nullptr;
+}
+
+int MidiInputAdapter::getIndex()
+{
+	if ( input )
+		return MidiInput::getDevices().indexOf( input->getName() );
+	else
+		return -1;
 }

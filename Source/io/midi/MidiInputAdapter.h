@@ -25,12 +25,15 @@ public:
 
 	void set( int newInput );
 
-	void handleIncomingMidiMessage( MidiInput* source,
+	void handleIncomingMidiMessage( juce::MidiInput* source,
 		const MidiMessage& message ) override;
 
 	Component* getSetupComponent() override;
 
+	int getIndex();
+
 private:
+	ScopedPointer<juce::MidiInput> input;
 
 
 
