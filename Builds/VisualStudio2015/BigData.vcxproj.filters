@@ -289,6 +289,9 @@
     <ClCompile Include="..\..\Source\io\osc\OscOutputAdapter.cpp">
       <Filter>BigData\Source\io\osc</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\io\osc\OscOutputSetupComponent.cpp">
+      <Filter>BigData\Source\io\osc</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\io\ControlHandle.cpp">
       <Filter>BigData\Source\io</Filter>
     </ClCompile>
@@ -1624,6 +1627,9 @@
       <Filter>BigData\Source\io\osc</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\io\osc\OscOutputAdapter.h">
+      <Filter>BigData\Source\io\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\io\osc\OscOutputSetupComponent.h">
       <Filter>BigData\Source\io\osc</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\io\ControlHandle.h">

@@ -38,6 +38,7 @@ private:
 	void updatePort( int port );
 
 	ScopedPointer<Label> label;
+	ScopedPointer<Label> ip;
 	ScopedPointer<TextEditor> editor;
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR( OscInputSetupComponent )
 };

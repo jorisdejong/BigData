@@ -40,14 +40,31 @@ void IoController::toggleSetupComponent()
 	if ( !setup )
 	{
 		setup = new Component();
+		int w = 0;
+		int h = 0;
 		if ( input )
 		{
 			Component* inputSetup = input->getSetupComponent();
 			setup->addAndMakeVisible( inputSetup );
-			inputSetup->setTopLeftPosition( 0, 0 );
-
-			setup->setSize( inputSetup->getBounds().getWidth(), inputSetup->getBounds().getHeight() );
+			inputSetup->setTopLeftPosition( 0, h );
+			w = inputSetup->getWidth();
+			h = inputSetup->getHeight();
 		}
+		if ( output )
+		{
+			Component* outputSetup = output->getSetupComponent();
+			setup->addAndMakeVisible( outputSetup );
+			outputSetup->setTopLeftPosition( 0, h );
+			w = outputSetup->getWidth();
+			h += outputSetup->getHeight();
+
+		}
+
+		if ( !input && !output )
+			return;
+
+		setup->setSize( w, h );
+
 		TopLevelWindow::getActiveTopLevelWindow()->getChildComponent( 0 )->addChildComponent( setup );
 		setup->setCentreRelative( 0.5f, 0.5f );
 	}

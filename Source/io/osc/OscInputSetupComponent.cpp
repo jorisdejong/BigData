@@ -15,9 +15,21 @@
 //==============================================================================
 OscInputSetupComponent::OscInputSetupComponent( OscInputAdapter& adapter ) : adapter( adapter )
 {
-	label = new Label( "label", "Input Port:" );
+	label = new Label( "label", "In:" );
 	addAndMakeVisible( label );
 	label->setColour( Label::ColourIds::textColourId, Colours::whitesmoke );
+
+	//ipaddresses
+	Array<IPAddress> ips;
+	IPAddress::findAllAddresses( ips );
+
+	if ( ips.size() > 1 )
+	{
+		ip = new Label( "ip", ips[1].toString() );
+		addAndMakeVisible( ip );
+		ip->setColour( Label::ColourIds::textColourId, Colours::whitesmoke );
+	}
+
 	editor = new TextEditor();
 	editor->setInputRestrictions( 0, "0123456789" );
 	editor->addListener( this );
@@ -52,7 +64,9 @@ void OscInputSetupComponent::paint( Graphics& g )
 
 void OscInputSetupComponent::resized()
 {
-	label->setBoundsRelative( 0.0f, 0.0f, 0.75f, 1.0f );
+	label->setBoundsRelative( 0.0f, 0.0f, 0.25f, 1.0f );
+	if ( ip )
+		ip->setBoundsRelative( 0.25f, 0.0f, 0.5f, 1.0f );
 	editor->setBoundsRelative( 0.75f, 0.0f, 0.25f, 1.0f );
 	editor->setText( String( adapter.getPort() ) );
 }

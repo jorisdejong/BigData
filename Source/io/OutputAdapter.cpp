@@ -27,3 +27,8 @@ void OutputAdapter::sendMessage( MidiMessage m )
 {
 	//virtual
 }
+
+void OutputAdapter::set( String hostname, int port )
+{
+	//virtual
+}

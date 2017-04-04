@@ -12,18 +12,29 @@
 #define OSCOUTPUTADAPTER_H_INCLUDED
 
 #include "../OutputAdapter.h"
+#include "OscOutputSetupComponent.h"
 
 class OscOutputAdapter :
 	public OutputAdapter,
 	public juce::OSCSender
 {
 public:
-	OscOutputAdapter( String hostname, int port );
+	OscOutputAdapter();
 	~OscOutputAdapter();
 
+	void set( String hostname, int port ) override;
 	void sendMessage( OSCMessage m ) override;
 
+	Component* getSetupComponent() override;
+
+	String getIp();
+	int getPort();
+
 private:
+	int port;
+	String ip;
+
+	ScopedPointer<OscOutputSetupComponent> outputSetup;
 
 
 };

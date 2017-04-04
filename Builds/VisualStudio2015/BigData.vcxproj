@@ -142,6 +142,7 @@
     <ClCompile Include="..\..\Source\io\osc\OscInputAdapter.cpp"/>
     <ClCompile Include="..\..\Source\io\osc\OscInputSetupComponent.cpp"/>
     <ClCompile Include="..\..\Source\io\osc\OscOutputAdapter.cpp"/>
+    <ClCompile Include="..\..\Source\io\osc\OscOutputSetupComponent.cpp"/>
     <ClCompile Include="..\..\Source\io\ControlHandle.cpp"/>
     <ClCompile Include="..\..\Source\io\InputAdapter.cpp"/>
     <ClCompile Include="..\..\Source\io\IoController.cpp"/>
@@ -1358,6 +1359,7 @@
     <ClInclude Include="..\..\Source\io\osc\OscInputAdapter.h"/>
     <ClInclude Include="..\..\Source\io\osc\OscInputSetupComponent.h"/>
     <ClInclude Include="..\..\Source\io\osc\OscOutputAdapter.h"/>
+    <ClInclude Include="..\..\Source\io\osc\OscOutputSetupComponent.h"/>
     <ClInclude Include="..\..\Source\io\ControlHandle.h"/>
     <ClInclude Include="..\..\Source\io\InputAdapter.h"/>
     <ClInclude Include="..\..\Source\io\IoController.h"/>

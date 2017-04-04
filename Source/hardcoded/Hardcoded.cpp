@@ -30,7 +30,8 @@ void Hardcoded::assignOsc( String outputIp, int port )
 {
 	OscInputAdapter* oscInput = new OscInputAdapter();
 	oscInput->set( 7002 );
-	OscOutputAdapter* oscOutput = new OscOutputAdapter( outputIp, port );
+	OscOutputAdapter* oscOutput = new OscOutputAdapter();
+	oscOutput->set( outputIp, port );
 	IoController* oscController = new IoController( "Video", oscInput, oscOutput );
 	FixtureController::getInstance()->addIo( oscController );
 

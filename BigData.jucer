@@ -55,6 +55,10 @@
                 file="Source/io/osc/OscOutputAdapter.cpp"/>
           <FILE id="ALTgyQ" name="OscOutputAdapter.h" compile="0" resource="0"
                 file="Source/io/osc/OscOutputAdapter.h"/>
+          <FILE id="SFccVp" name="OscOutputSetupComponent.cpp" compile="1" resource="0"
+                file="Source/io/osc/OscOutputSetupComponent.cpp"/>
+          <FILE id="cNFOLG" name="OscOutputSetupComponent.h" compile="0" resource="0"
+                file="Source/io/osc/OscOutputSetupComponent.h"/>
         </GROUP>
         <FILE id="nRDmE4" name="ControlHandle.cpp" compile="1" resource="0"
               file="Source/io/ControlHandle.cpp"/>
