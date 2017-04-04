@@ -37,6 +37,14 @@
                 file="Source/io/midi/MidiControlHandle.cpp"/>
           <FILE id="oTANSc" name="MidiControlHandle.h" compile="0" resource="0"
                 file="Source/io/midi/MidiControlHandle.h"/>
+          <FILE id="niIDjE" name="MidiInputAdapter.cpp" compile="1" resource="0"
+                file="Source/io/midi/MidiInputAdapter.cpp"/>
+          <FILE id="QJkeQI" name="MidiInputAdapter.h" compile="0" resource="0"
+                file="Source/io/midi/MidiInputAdapter.h"/>
+          <FILE id="GBRT6W" name="MidiOutputAdapter.cpp" compile="1" resource="0"
+                file="Source/io/midi/MidiOutputAdapter.cpp"/>
+          <FILE id="hHqohx" name="MidiOutputAdapter.h" compile="0" resource="0"
+                file="Source/io/midi/MidiOutputAdapter.h"/>
         </GROUP>
         <GROUP id="{378704DC-A4A8-CFBC-83C5-31736978CFCC}" name="osc">
           <FILE id="kfx2Pe" name="OscControlHandle.cpp" compile="1" resource="0"

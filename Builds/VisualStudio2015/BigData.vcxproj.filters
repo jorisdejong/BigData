@@ -277,6 +277,12 @@
     <ClCompile Include="..\..\Source\io\midi\MidiControlHandle.cpp">
       <Filter>BigData\Source\io\midi</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\io\midi\MidiInputAdapter.cpp">
+      <Filter>BigData\Source\io\midi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\io\midi\MidiOutputAdapter.cpp">
+      <Filter>BigData\Source\io\midi</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\io\osc\OscControlHandle.cpp">
       <Filter>BigData\Source\io\osc</Filter>
     </ClCompile>
@@ -1615,6 +1621,12 @@
       <Filter>BigData\Source\gui</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\io\midi\MidiControlHandle.h">
+      <Filter>BigData\Source\io\midi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\io\midi\MidiInputAdapter.h">
+      <Filter>BigData\Source\io\midi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\io\midi\MidiOutputAdapter.h">
       <Filter>BigData\Source\io\midi</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\io\osc\OscControlHandle.h">

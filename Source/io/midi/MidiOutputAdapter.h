@@ -1,21 +1,18 @@
 /*
   ==============================================================================
 
-    InputAdapter.cpp
-    Created: 22 Mar 2017 7:03:52pm
+    MidiOutputAdapter.h
+    Created: 4 Apr 2017 11:05:54pm
     Author:  Joris
 
   ==============================================================================
 */
 
-#include "InputAdapter.h"
-
-InputAdapter::InputAdapter()
-  {
-  }
-
-InputAdapter::~InputAdapter()
-{
-}
+#ifndef MIDIOUTPUTADAPTER_H_INCLUDED
+#define MIDIOUTPUTADAPTER_H_INCLUDED
 
 
+
+
+
+#endif  // MIDIOUTPUTADAPTER_H_INCLUDED

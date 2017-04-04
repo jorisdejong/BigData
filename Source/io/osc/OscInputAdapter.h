@@ -25,7 +25,7 @@ public:
 	OscInputAdapter();
 	~OscInputAdapter();
 
-	void set( int port ) override;
+	void set( int port );
 
 	void oscMessageReceived( const OSCMessage& message ) override;
 

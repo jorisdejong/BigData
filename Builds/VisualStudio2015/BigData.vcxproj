@@ -138,6 +138,8 @@
     <ClCompile Include="..\..\Source\gui\HandleBlock.cpp"/>
     <ClCompile Include="..\..\Source\gui\ParamSlider.cpp"/>
     <ClCompile Include="..\..\Source\io\midi\MidiControlHandle.cpp"/>
+    <ClCompile Include="..\..\Source\io\midi\MidiInputAdapter.cpp"/>
+    <ClCompile Include="..\..\Source\io\midi\MidiOutputAdapter.cpp"/>
     <ClCompile Include="..\..\Source\io\osc\OscControlHandle.cpp"/>
     <ClCompile Include="..\..\Source\io\osc\OscInputAdapter.cpp"/>
     <ClCompile Include="..\..\Source\io\osc\OscInputSetupComponent.cpp"/>
@@ -1355,6 +1357,8 @@
     <ClInclude Include="..\..\Source\gui\HandleBlock.h"/>
     <ClInclude Include="..\..\Source\gui\ParamSlider.h"/>
     <ClInclude Include="..\..\Source\io\midi\MidiControlHandle.h"/>
+    <ClInclude Include="..\..\Source\io\midi\MidiInputAdapter.h"/>
+    <ClInclude Include="..\..\Source\io\midi\MidiOutputAdapter.h"/>
     <ClInclude Include="..\..\Source\io\osc\OscControlHandle.h"/>
     <ClInclude Include="..\..\Source\io\osc\OscInputAdapter.h"/>
     <ClInclude Include="..\..\Source\io\osc\OscInputSetupComponent.h"/>

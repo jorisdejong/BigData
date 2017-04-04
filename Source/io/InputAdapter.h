@@ -21,9 +21,6 @@ public:
 	InputAdapter();
 	virtual ~InputAdapter();
 
-	virtual void set( int port );
-	//virtual void set( MidiInput* input ); //midi
-
 	virtual Component* getSetupComponent() = 0;
 
 private:
