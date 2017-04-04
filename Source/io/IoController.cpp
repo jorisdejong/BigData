@@ -39,12 +39,12 @@ void IoController::toggleSetupComponent()
 {
 	if ( !setup )
 	{
-		setup = new Component();
+		setup = new juce::Component();
 		int w = 0;
 		int h = 0;
 		if ( input )
 		{
-			Component* inputSetup = input->getSetupComponent();
+			juce::Component* inputSetup = input->getSetupComponent();
 			setup->addAndMakeVisible( inputSetup );
 			inputSetup->setTopLeftPosition( 0, h );
 			w = inputSetup->getWidth();
@@ -52,12 +52,11 @@ void IoController::toggleSetupComponent()
 		}
 		if ( output )
 		{
-			Component* outputSetup = output->getSetupComponent();
+			juce::Component* outputSetup = output->getSetupComponent();
 			setup->addAndMakeVisible( outputSetup );
 			outputSetup->setTopLeftPosition( 0, h );
 			w = outputSetup->getWidth();
 			h += outputSetup->getHeight();
-
 		}
 
 		if ( !input && !output )
@@ -66,7 +65,11 @@ void IoController::toggleSetupComponent()
 		setup->setSize( w, h );
 
 		TopLevelWindow::getActiveTopLevelWindow()->getChildComponent( 0 )->addChildComponent( setup );
-		setup->setCentreRelative( 0.5f, 0.5f );
+		//this is dodgy as fuck
+		float hc = 0.5f;
+		if ( TopLevelWindow::getActiveTopLevelWindow()->getChildComponent( 0 )->getNumChildComponents() > 1 )
+			hc += (float)TopLevelWindow::getActiveTopLevelWindow()->getChildComponent( 0 )->getChildComponent(0)->getHeight() / (float)TopLevelWindow::getActiveTopLevelWindow()->getChildComponent( 0 )->getHeight();
+		setup->setCentreRelative( 0.5f, hc );
 	}
 
 	setup->setVisible( !setup->isVisible() );
