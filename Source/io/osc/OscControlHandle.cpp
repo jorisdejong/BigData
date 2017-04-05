@@ -29,7 +29,7 @@ bool OscControlHandle::matches( juce::OSCMessage message )
 void OscControlHandle::update( float value )
 {
 	if ( isInverted() )
-		value = 1.0 - value;
+		value = 1.0f - value;
 	juce::OSCMessage m( oscAddress.toString(), type == juce::OSCTypes::int32 ? (int) value : value );
 	controller->getOutput()->sendMessage( m );
 }

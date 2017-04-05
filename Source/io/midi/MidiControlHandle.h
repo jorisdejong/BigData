@@ -18,16 +18,16 @@ class MidiControlHandle :
 	public ControlHandle
 {
 public:
-	MidiControlHandle( int channel, int controller, bool isNote );
+	MidiControlHandle( int channel, int controller, bool isNote, IoController* io, bool canBeInverted );
 	~MidiControlHandle();
 
 	bool matches( const MidiMessage& m );
+	void update( float value ) override;
 
 private:
 	int channel;
-	int controller;
+	int noteNumberOrCC;
 	bool isNote;
-
 };
 
 
