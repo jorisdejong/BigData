@@ -46,18 +46,10 @@
                 file="Source/io/midi/MidiInputAdapter.cpp"/>
           <FILE id="QJkeQI" name="MidiInputAdapter.h" compile="0" resource="0"
                 file="Source/io/midi/MidiInputAdapter.h"/>
-          <FILE id="GNpaz8" name="MidiInputSetupComponent.cpp" compile="1" resource="0"
-                file="Source/io/midi/MidiInputSetupComponent.cpp"/>
-          <FILE id="fI0L9g" name="MidiInputSetupComponent.h" compile="0" resource="0"
-                file="Source/io/midi/MidiInputSetupComponent.h"/>
           <FILE id="GBRT6W" name="MidiOutputAdapter.cpp" compile="1" resource="0"
                 file="Source/io/midi/MidiOutputAdapter.cpp"/>
           <FILE id="hHqohx" name="MidiOutputAdapter.h" compile="0" resource="0"
                 file="Source/io/midi/MidiOutputAdapter.h"/>
-          <FILE id="Moj0hu" name="MidiOutputSetupComponent.cpp" compile="1" resource="0"
-                file="Source/io/midi/MidiOutputSetupComponent.cpp"/>
-          <FILE id="JtaGHi" name="MidiOutputSetupComponent.h" compile="0" resource="0"
-                file="Source/io/midi/MidiOutputSetupComponent.h"/>
         </GROUP>
         <GROUP id="{378704DC-A4A8-CFBC-83C5-31736978CFCC}" name="osc">
           <FILE id="kfx2Pe" name="OscControlHandle.cpp" compile="1" resource="0"
@@ -68,18 +60,10 @@
                 file="Source/io/osc/OscInputAdapter.cpp"/>
           <FILE id="WTvlcn" name="OscInputAdapter.h" compile="0" resource="0"
                 file="Source/io/osc/OscInputAdapter.h"/>
-          <FILE id="jiTv0Q" name="OscInputSetupComponent.cpp" compile="1" resource="0"
-                file="Source/io/osc/OscInputSetupComponent.cpp"/>
-          <FILE id="g6jwmO" name="OscInputSetupComponent.h" compile="0" resource="0"
-                file="Source/io/osc/OscInputSetupComponent.h"/>
           <FILE id="JvaL8L" name="OscOutputAdapter.cpp" compile="1" resource="0"
                 file="Source/io/osc/OscOutputAdapter.cpp"/>
           <FILE id="ALTgyQ" name="OscOutputAdapter.h" compile="0" resource="0"
                 file="Source/io/osc/OscOutputAdapter.h"/>
-          <FILE id="SFccVp" name="OscOutputSetupComponent.cpp" compile="1" resource="0"
-                file="Source/io/osc/OscOutputSetupComponent.cpp"/>
-          <FILE id="cNFOLG" name="OscOutputSetupComponent.h" compile="0" resource="0"
-                file="Source/io/osc/OscOutputSetupComponent.h"/>
         </GROUP>
         <FILE id="nRDmE4" name="ControlHandle.cpp" compile="1" resource="0"
               file="Source/io/ControlHandle.cpp"/>

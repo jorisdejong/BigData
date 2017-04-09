@@ -14,7 +14,6 @@
 #define MIDIOUTPUTADAPTER_H_INCLUDED
 
 #include "../OutputAdapter.h"
-#include "MidiOutputSetupComponent.h"
 
 class MidiOutputAdapter : public OutputAdapter
 {
@@ -25,13 +24,10 @@ public:
 	void set( int newOutput );
 	void sendMessage( MidiMessage m ) override;
 
-	Component* getSetupComponent() override;
-
 	int getIndex();
 
 private: 
 	ScopedPointer<MidiOutput> output;
-	ScopedPointer<MidiOutputSetupComponent> outputSetup;
 };
 
 

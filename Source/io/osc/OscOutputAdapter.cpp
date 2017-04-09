@@ -39,15 +39,6 @@ void OscOutputAdapter::sendMessage( OSCMessage m )
 		DBG( "Sent OscMessage " + m.getAddressPattern().toString() + ", value " + value );
 }
 
-Component * OscOutputAdapter::getSetupComponent()
-{
-	if ( !outputSetup )
-	{
-		outputSetup = new OscOutputSetupComponent( *this );
-		outputSetup->setSize( 200, 30 );
-	}
-	return outputSetup;
-}
 
 String OscOutputAdapter::getIp()
 {

@@ -24,6 +24,7 @@ ParamBlock::ParamBlock( FixtureParameter* param )
 		switch ( param->getHandles().indexOf( handle ) )
 		{
 		case 0:
+		default:
 			block = new HandleBlock( handle );
 			break;
 		case 1:
@@ -40,7 +41,7 @@ ParamBlock::~ParamBlock()
 {
 }
 
-void ParamBlock::paint (Graphics& g)
+void ParamBlock::paint (Graphics& )
 {
    
 }

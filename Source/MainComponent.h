@@ -20,8 +20,7 @@
     your controls and content.
 */
 class MainContentComponent   : 
-	public Component,
-	public Button::Listener
+	public Component
 {
 public:
     //==============================================================================
@@ -31,13 +30,10 @@ public:
     void paint (Graphics&) override;
     void resized() override;
 
-	void buttonClicked( Button* ) override;
-
 private:
 	ScopedPointer<BigDataLookAndFeel> lookAndFeel;
 	OwnedArray<FixtureBlock> fixtureBlocks;
 
-	ScopedPointer<TextButton> setup;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainContentComponent)
 };

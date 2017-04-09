@@ -286,13 +286,7 @@
     <ClCompile Include="..\..\Source\io\midi\MidiInputAdapter.cpp">
       <Filter>BigData\Source\io\midi</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\io\midi\MidiInputSetupComponent.cpp">
-      <Filter>BigData\Source\io\midi</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\io\midi\MidiOutputAdapter.cpp">
-      <Filter>BigData\Source\io\midi</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\io\midi\MidiOutputSetupComponent.cpp">
       <Filter>BigData\Source\io\midi</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\io\osc\OscControlHandle.cpp">
@@ -301,13 +295,7 @@
     <ClCompile Include="..\..\Source\io\osc\OscInputAdapter.cpp">
       <Filter>BigData\Source\io\osc</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\io\osc\OscInputSetupComponent.cpp">
-      <Filter>BigData\Source\io\osc</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\io\osc\OscOutputAdapter.cpp">
-      <Filter>BigData\Source\io\osc</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\io\osc\OscOutputSetupComponent.cpp">
       <Filter>BigData\Source\io\osc</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\io\ControlHandle.cpp">
@@ -1644,13 +1632,7 @@
     <ClInclude Include="..\..\Source\io\midi\MidiInputAdapter.h">
       <Filter>BigData\Source\io\midi</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\io\midi\MidiInputSetupComponent.h">
-      <Filter>BigData\Source\io\midi</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\io\midi\MidiOutputAdapter.h">
-      <Filter>BigData\Source\io\midi</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\io\midi\MidiOutputSetupComponent.h">
       <Filter>BigData\Source\io\midi</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\io\osc\OscControlHandle.h">
@@ -1659,13 +1641,7 @@
     <ClInclude Include="..\..\Source\io\osc\OscInputAdapter.h">
       <Filter>BigData\Source\io\osc</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Source\io\osc\OscInputSetupComponent.h">
-      <Filter>BigData\Source\io\osc</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Source\io\osc\OscOutputAdapter.h">
-      <Filter>BigData\Source\io\osc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\io\osc\OscOutputSetupComponent.h">
       <Filter>BigData\Source\io\osc</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\io\ControlHandle.h">

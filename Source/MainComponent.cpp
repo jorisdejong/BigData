@@ -25,11 +25,6 @@ MainContentComponent::MainContentComponent()
 		addAndMakeVisible( fixtureBlock );
 	}
 
-	//add setup buttons
-	setup = new TextButton( "Setup" );
-	addAndMakeVisible( setup );
-	setup->addListener( this );
-
 	setSize( 600, 300 );
 }
 
@@ -52,12 +47,4 @@ void MainContentComponent::resized()
 		fixtureBlock->setBoundsRelative( 0.16666f, y, 0.66f, h );
 		y += h;
 	}
-
-	setup->setBoundsRelative( 0.9f, 0.9f, 0.1f, 0.1f );
-}
-
-void MainContentComponent::buttonClicked( Button * )
-{
-	for ( IoController* controller : FixtureController::getInstance()->getControllers() )
-		controller->toggleSetupComponent();
 }

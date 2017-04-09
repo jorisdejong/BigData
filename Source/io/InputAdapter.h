@@ -20,9 +20,6 @@ class InputAdapter
 public:
 	InputAdapter();
 	virtual ~InputAdapter();
-
-	virtual Component* getSetupComponent() = 0;
-
 private:
 	
 };

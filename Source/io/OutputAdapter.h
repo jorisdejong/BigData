@@ -21,10 +21,6 @@ public:
 
 	virtual void sendMessage( OSCMessage m );
 	virtual void sendMessage( MidiMessage m );
-
-	
-
-	virtual Component* getSetupComponent() = 0;
 };
 
 

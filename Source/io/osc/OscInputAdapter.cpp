@@ -15,7 +15,6 @@
 OscInputAdapter::OscInputAdapter( )
 {
 	port = -1;
-	inputSetup = nullptr;
 }
 
 OscInputAdapter::~OscInputAdapter()
@@ -55,16 +54,6 @@ void OscInputAdapter::oscMessageReceived( const OSCMessage & message )
 int OscInputAdapter::getPort()
 {
 	return port;
-}
-
-Component* OscInputAdapter::getSetupComponent()
-{
-	if ( !inputSetup )
-	{
-		inputSetup = new OscInputSetupComponent( *this );
-		inputSetup->setSize( 200, 30 );
-	}
-	return inputSetup;
 }
 
 float OscInputAdapter::getFloatValue( const OSCMessage & m )

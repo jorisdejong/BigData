@@ -14,7 +14,6 @@
 #define MIDIINPUTADAPTER_H_INCLUDED
 
 #include "../InputAdapter.h"
-#include "MidiInputSetupComponent.h"
 
 class MidiInputAdapter : 
 	public InputAdapter,
@@ -28,13 +27,9 @@ public:
 
 	void handleIncomingMidiMessage( juce::MidiInput* source,
 		const MidiMessage& message ) override;
-
-	Component* getSetupComponent() override;
-
 	int getIndex();
 
 private:
-	ScopedPointer<MidiInputSetupComponent> inputSetup;
 	ScopedPointer<juce::MidiInput> input;
 
 

@@ -29,8 +29,6 @@ public:
 
 	String getName();
 
-	void toggleSetupComponent();
-
 private:
 	String name;
 	ScopedPointer<InputAdapter> input;
