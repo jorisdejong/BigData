@@ -13,9 +13,10 @@ BEGIN
   BEGIN
     BLOCK "040904E4"
     BEGIN
-      VALUE "FileDescription",  "BigData\0"
+      VALUE "CompanyName",  "Hybrid Visuals\0"
+      VALUE "FileDescription",  "Octopus\0"
       VALUE "FileVersion",  "1.0.0\0"
-      VALUE "ProductName",  "BigData\0"
+      VALUE "ProductName",  "Octopus\0"
       VALUE "ProductVersion",  "1.0.0\0"
     END
   END
@@ -27,3 +28,6 @@ BEGIN
 END
 
 #endif
+
+IDI_ICON1 ICON DISCARDABLE "icon.ico"
+IDI_ICON2 ICON DISCARDABLE "icon.ico"

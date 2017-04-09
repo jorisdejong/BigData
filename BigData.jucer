@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="ChmR1G" name="BigData" projectType="guiapp" version="1.0.0"
-              bundleIdentifier="com.yourcompany.BigData" includeBinaryInAppConfig="1"
-              jucerVersion="4.3.1">
-  <MAINGROUP id="YJxLjZ" name="BigData">
+<JUCERPROJECT id="ChmR1G" name="Octopus" projectType="guiapp" version="1.0.0"
+              bundleIdentifier="nl.hybridvisuals.Octopus" includeBinaryInAppConfig="1"
+              jucerVersion="4.3.1" companyName="Hybrid Visuals" companyWebsite="www.hybridvisuals.nl"
+              companyEmail="joris@hybridvisuals.nl">
+  <MAINGROUP id="YJxLjZ" name="Octopus">
     <GROUP id="{B5C78092-8F88-B9F7-5FD4-817BBC6768DF}" name="Source">
+      <GROUP id="{8E90C481-816B-5013-D2D9-45C95C71FE25}" name="gfx">
+        <FILE id="wXpYha" name="logo.jpg" compile="0" resource="1" file="Source/gfx/logo.jpg"/>
+      </GROUP>
       <GROUP id="{83899985-26B7-6C5C-C5B2-2B736EBC96DF}" name="hardcoded">
         <FILE id="paIaqm" name="Hardcoded.cpp" compile="1" resource="0" file="Source/hardcoded/Hardcoded.cpp"/>
         <FILE id="FMSdwp" name="Hardcoded.h" compile="0" resource="0" file="Source/hardcoded/Hardcoded.h"/>
@@ -85,12 +89,12 @@
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
-    <VS2015 targetFolder="Builds/VisualStudio2015">
+    <VS2015 targetFolder="Builds/VisualStudio2015" smallIcon="wXpYha" bigIcon="wXpYha">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
-                       isDebug="1" optimisation="1" targetName="BigData"/>
+                       isDebug="1" optimisation="1" targetName="Octopus Debug"/>
         <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
-                       isDebug="0" optimisation="3" targetName="BigData"/>
+                       isDebug="0" optimisation="3" targetName="Octopus"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="../JUCE/modules"/>
