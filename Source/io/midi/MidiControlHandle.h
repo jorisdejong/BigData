@@ -18,7 +18,7 @@ class MidiControlHandle :
 	public ControlHandle
 {
 public:
-	MidiControlHandle( int channel, int controller, bool isNote, IoController* io, bool canBeInverted );
+	MidiControlHandle( int channel, int controller, bool isNote, IoController* io, bool canBeInverted = false);
 	~MidiControlHandle();
 
 	bool matches( const MidiMessage& m );

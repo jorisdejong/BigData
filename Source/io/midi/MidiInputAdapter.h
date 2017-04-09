@@ -14,6 +14,7 @@
 #define MIDIINPUTADAPTER_H_INCLUDED
 
 #include "../InputAdapter.h"
+#include "MidiInputSetupComponent.h"
 
 class MidiInputAdapter : 
 	public InputAdapter,
@@ -33,6 +34,7 @@ public:
 	int getIndex();
 
 private:
+	ScopedPointer<MidiInputSetupComponent> inputSetup;
 	ScopedPointer<juce::MidiInput> input;
 
 

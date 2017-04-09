@@ -18,13 +18,16 @@
 #include "../io/osc/OscControlHandle.h"
 #include "../io/osc/OscInputAdapter.h"
 #include "../io/osc/OscOutputAdapter.h"
+#include "../io/midi/MidiInputAdapter.h"
+#include "../io/midi/MidiOutputAdapter.h"
+#include "../io/midi/MidiControlHandle.h"
 
 class Hardcoded
 {
 public:
 	static void create();
 	static void assignOsc( String outputIp, int port );
-	static void assignMidi( MidiInput* input, MidiOutput output );
+	static void assignMidi();
 
 };
 

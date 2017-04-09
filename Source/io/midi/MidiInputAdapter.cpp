@@ -11,6 +11,7 @@
 #include "MidiInputAdapter.h"
 #include "../../fixture/FixtureController.h"
 
+
 MidiInputAdapter::MidiInputAdapter()
 {
 	input = nullptr;
@@ -48,7 +49,12 @@ void MidiInputAdapter::handleIncomingMidiMessage( juce::MidiInput *, const MidiM
 
 Component * MidiInputAdapter::getSetupComponent()
 {
-	return nullptr;
+	if ( !inputSetup )
+	{
+		inputSetup = new MidiInputSetupComponent( *this );
+		inputSetup->setSize( 200, 30 );
+	}
+	return inputSetup;
 }
 
 int MidiInputAdapter::getIndex()

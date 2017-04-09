@@ -31,6 +31,7 @@ public:
     {
 		Hardcoded::create();
 		Hardcoded::assignOsc( "127.0.0.1", 7000 );
+		Hardcoded::assignMidi();
 
         mainWindow = new MainWindow (getApplicationName());
 

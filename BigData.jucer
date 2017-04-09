@@ -46,10 +46,18 @@
                 file="Source/io/midi/MidiInputAdapter.cpp"/>
           <FILE id="QJkeQI" name="MidiInputAdapter.h" compile="0" resource="0"
                 file="Source/io/midi/MidiInputAdapter.h"/>
+          <FILE id="GNpaz8" name="MidiInputSetupComponent.cpp" compile="1" resource="0"
+                file="Source/io/midi/MidiInputSetupComponent.cpp"/>
+          <FILE id="fI0L9g" name="MidiInputSetupComponent.h" compile="0" resource="0"
+                file="Source/io/midi/MidiInputSetupComponent.h"/>
           <FILE id="GBRT6W" name="MidiOutputAdapter.cpp" compile="1" resource="0"
                 file="Source/io/midi/MidiOutputAdapter.cpp"/>
           <FILE id="hHqohx" name="MidiOutputAdapter.h" compile="0" resource="0"
                 file="Source/io/midi/MidiOutputAdapter.h"/>
+          <FILE id="Moj0hu" name="MidiOutputSetupComponent.cpp" compile="1" resource="0"
+                file="Source/io/midi/MidiOutputSetupComponent.cpp"/>
+          <FILE id="JtaGHi" name="MidiOutputSetupComponent.h" compile="0" resource="0"
+                file="Source/io/midi/MidiOutputSetupComponent.h"/>
         </GROUP>
         <GROUP id="{378704DC-A4A8-CFBC-83C5-31736978CFCC}" name="osc">
           <FILE id="kfx2Pe" name="OscControlHandle.cpp" compile="1" resource="0"
