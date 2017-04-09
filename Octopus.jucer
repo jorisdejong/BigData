@@ -7,7 +7,7 @@
   <MAINGROUP id="YJxLjZ" name="Octopus">
     <GROUP id="{B5C78092-8F88-B9F7-5FD4-817BBC6768DF}" name="Source">
       <GROUP id="{8E90C481-816B-5013-D2D9-45C95C71FE25}" name="gfx">
-        <FILE id="wXpYha" name="logo.jpg" compile="0" resource="1" file="Source/gfx/logo.jpg"/>
+        <FILE id="bw6PNp" name="logo.png" compile="0" resource="1" file="Source/gfx/logo.png"/>
       </GROUP>
       <GROUP id="{83899985-26B7-6C5C-C5B2-2B736EBC96DF}" name="hardcoded">
         <FILE id="paIaqm" name="Hardcoded.cpp" compile="1" resource="0" file="Source/hardcoded/Hardcoded.cpp"/>
@@ -89,7 +89,7 @@
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
-    <VS2015 targetFolder="Builds/VisualStudio2015" smallIcon="wXpYha" bigIcon="wXpYha">
+    <VS2015 targetFolder="Builds/VisualStudio2015" smallIcon="bw6PNp" bigIcon="bw6PNp">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
                        isDebug="1" optimisation="1" targetName="Octopus Debug"/>

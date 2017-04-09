@@ -9,8 +9,8 @@
 
 namespace BinaryData
 {
-    extern const char*   logo_jpg;
-    const int            logo_jpgSize = 8984;
+    extern const char*   logo_png;
+    const int            logo_pngSize = 19578;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];

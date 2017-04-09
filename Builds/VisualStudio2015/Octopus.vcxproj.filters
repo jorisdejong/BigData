@@ -2915,7 +2915,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\Source\gfx\logo.jpg">
+    <None Include="..\..\Source\gfx\logo.png">
       <Filter>Octopus\Source\gfx</Filter>
     </None>
     <None Include="..\..\..\JUCE\modules\juce_graphics\image_formats\jpglib\changes to libjpeg for JUCE.txt">
