@@ -20,7 +20,17 @@ ParamBlock::ParamBlock( FixtureParameter* param )
 
 	for ( ControlHandle* handle : param->getHandles() )
 	{
-		HandleBlock* block = new HandleBlock( handle );
+		HandleBlock* block;
+		switch ( param->getHandles().indexOf( handle ) )
+		{
+		case 0:
+			block = new HandleBlock( handle );
+			break;
+		case 1:
+			block = new HandleBlock( handle, true );
+			break;
+		}
+		
 		blocks.add( block );
 		addAndMakeVisible( block );
 	}

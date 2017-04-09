@@ -12,7 +12,7 @@
 #include "HandleBlock.h"
 
 //==============================================================================
-HandleBlock::HandleBlock( ControlHandle* handle ) : handle( handle )
+HandleBlock::HandleBlock( ControlHandle* handle, bool isFlipped ) : handle( handle ), isFlipped ( isFlipped )
 {
 	linkButton = new TextButton( "Link" );
 	linkButton->addListener( this );
@@ -41,8 +41,16 @@ void HandleBlock::paint (Graphics& )
 
 void HandleBlock::resized()
 {
-	linkButton->setBoundsRelative( 0.0f, 0.0f, 0.5f, 1.0f );
-	invertButton->setBoundsRelative( 0.5f, 0.0f, 0.5f, 1.0f );
+	if ( isFlipped )
+	{
+		linkButton->setBoundsRelative( 0.0f, 0.0f, 0.5f, 1.0f );
+		invertButton->setBoundsRelative( 0.5f, 0.0f, 0.5f, 1.0f );
+	}
+	else
+	{
+		invertButton->setBoundsRelative( 0.0f, 0.0f, 0.5f, 1.0f );
+		linkButton->setBoundsRelative( 0.5f, 0.0f, 0.5f, 1.0f );
+	}
 }
 
 void HandleBlock::buttonClicked( Button * b )

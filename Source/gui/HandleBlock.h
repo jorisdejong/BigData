@@ -22,7 +22,7 @@ class HandleBlock    :
 	public Button::Listener
 {
 public:
-    HandleBlock(ControlHandle* handle);
+	HandleBlock( ControlHandle* handle, bool isFlipped = false );
     ~HandleBlock();
 
     void paint (Graphics&) override;
@@ -31,6 +31,7 @@ public:
 	void buttonClicked( Button* b ) override;
 
 private:
+	bool isFlipped;
 	ScopedPointer<TextButton> linkButton;
 	ScopedPointer<TextButton> invertButton;
 
