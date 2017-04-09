@@ -62,7 +62,8 @@ void Hardcoded::assignOsc( String outputIp, int port )
 void Hardcoded::assignMidi()
 {
 	MidiInputAdapter* midiInput = new MidiInputAdapter();
-	midiInput->set( 0 );
+	if ( MidiInput::getDevices().size() > 0 )
+		midiInput->set( 0 );
 	//MidiOutputAdapter* oscOutput = new MidiOutputAdapter();
 	//oscOutput->set( outputIp, port );
 	IoController* midiController = new IoController( "Laser", midiInput, nullptr );

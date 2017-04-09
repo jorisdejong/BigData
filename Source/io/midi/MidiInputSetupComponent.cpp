@@ -18,9 +18,9 @@ MidiInputSetupComponent::MidiInputSetupComponent( MidiInputAdapter& adapter ) : 
 	comboBox = new ComboBox();
 	addAndMakeVisible( comboBox );
 	comboBox->addListener( this );
-	comboBox->addItemList( MidiInput::getDevices(), 0 );
-	if ( MidiInput::getDevices().size() > 0 )
-		comboBox->setSelectedItemIndex( 0, sendNotification );
+	comboBox->addItemList( MidiInput::getDevices(), 1 );
+	if ( adapter.getIndex() != -1 )
+		comboBox->setSelectedItemIndex( adapter.getIndex(), dontSendNotification );
 }
 
 MidiInputSetupComponent::~MidiInputSetupComponent()
