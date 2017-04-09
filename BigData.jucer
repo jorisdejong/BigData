@@ -26,8 +26,13 @@
               file="Source/gui/BigDataLookAndFeel.cpp"/>
         <FILE id="NZLFR5" name="BigDataLookAndFeel.h" compile="0" resource="0"
               file="Source/gui/BigDataLookAndFeel.h"/>
+        <FILE id="blaToS" name="FixtureBlock.cpp" compile="1" resource="0"
+              file="Source/gui/FixtureBlock.cpp"/>
+        <FILE id="t2NKyF" name="FixtureBlock.h" compile="0" resource="0" file="Source/gui/FixtureBlock.h"/>
         <FILE id="K8QSm2" name="HandleBlock.cpp" compile="1" resource="0" file="Source/gui/HandleBlock.cpp"/>
         <FILE id="IBIq8B" name="HandleBlock.h" compile="0" resource="0" file="Source/gui/HandleBlock.h"/>
+        <FILE id="NPPydD" name="ParamBlock.cpp" compile="1" resource="0" file="Source/gui/ParamBlock.cpp"/>
+        <FILE id="ISpzLn" name="ParamBlock.h" compile="0" resource="0" file="Source/gui/ParamBlock.h"/>
         <FILE id="lIDH1m" name="ParamSlider.cpp" compile="1" resource="0" file="Source/gui/ParamSlider.cpp"/>
         <FILE id="UAk8xq" name="ParamSlider.h" compile="0" resource="0" file="Source/gui/ParamSlider.h"/>
       </GROUP>

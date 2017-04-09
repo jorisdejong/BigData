@@ -268,7 +268,13 @@
     <ClCompile Include="..\..\Source\gui\BigDataLookAndFeel.cpp">
       <Filter>BigData\Source\gui</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\gui\FixtureBlock.cpp">
+      <Filter>BigData\Source\gui</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\gui\HandleBlock.cpp">
+      <Filter>BigData\Source\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\gui\ParamBlock.cpp">
       <Filter>BigData\Source\gui</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\gui\ParamSlider.cpp">
@@ -1614,7 +1620,13 @@
     <ClInclude Include="..\..\Source\gui\BigDataLookAndFeel.h">
       <Filter>BigData\Source\gui</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\gui\FixtureBlock.h">
+      <Filter>BigData\Source\gui</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\gui\HandleBlock.h">
+      <Filter>BigData\Source\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\gui\ParamBlock.h">
       <Filter>BigData\Source\gui</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\gui\ParamSlider.h">

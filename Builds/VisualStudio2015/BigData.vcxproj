@@ -135,7 +135,9 @@
     <ClCompile Include="..\..\Source\fixture\FixtureParameter.cpp"/>
     <ClCompile Include="..\..\Source\fixture\Fixture.cpp"/>
     <ClCompile Include="..\..\Source\gui\BigDataLookAndFeel.cpp"/>
+    <ClCompile Include="..\..\Source\gui\FixtureBlock.cpp"/>
     <ClCompile Include="..\..\Source\gui\HandleBlock.cpp"/>
+    <ClCompile Include="..\..\Source\gui\ParamBlock.cpp"/>
     <ClCompile Include="..\..\Source\gui\ParamSlider.cpp"/>
     <ClCompile Include="..\..\Source\io\midi\MidiControlHandle.cpp"/>
     <ClCompile Include="..\..\Source\io\midi\MidiInputAdapter.cpp"/>
@@ -1354,7 +1356,9 @@
     <ClInclude Include="..\..\Source\fixture\FixtureParameter.h"/>
     <ClInclude Include="..\..\Source\fixture\Fixture.h"/>
     <ClInclude Include="..\..\Source\gui\BigDataLookAndFeel.h"/>
+    <ClInclude Include="..\..\Source\gui\FixtureBlock.h"/>
     <ClInclude Include="..\..\Source\gui\HandleBlock.h"/>
+    <ClInclude Include="..\..\Source\gui\ParamBlock.h"/>
     <ClInclude Include="..\..\Source\gui\ParamSlider.h"/>
     <ClInclude Include="..\..\Source\io\midi\MidiControlHandle.h"/>
     <ClInclude Include="..\..\Source\io\midi\MidiInputAdapter.h"/>

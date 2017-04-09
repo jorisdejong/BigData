@@ -11,7 +11,7 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "gui/BigDataLookAndFeel.h"
-#include "gui/ParamSlider.h"
+#include "gui/FixtureBlock.h"
 
 
 //==============================================================================
@@ -35,10 +35,9 @@ public:
 
 private:
 	ScopedPointer<BigDataLookAndFeel> lookAndFeel;
-	OwnedArray<Component> components;
+	OwnedArray<FixtureBlock> fixtureBlocks;
 
-	ScopedPointer<TextButton> videoSetup;
-	ScopedPointer<TextButton> laserSetup;
+	ScopedPointer<TextButton> setup;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainContentComponent)
 };
