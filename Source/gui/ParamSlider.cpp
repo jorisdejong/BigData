@@ -29,7 +29,7 @@ void ParamSlider::paint (Graphics& g)
 {
 	Slider::paint( g );
 	g.setColour( Colours::red.withAlpha( outlineOpacity ) );
-	g.drawRect( getLocalBounds(), 2.0f );
+	g.drawRect( getLocalBounds(), 2 );
 }
 
 void ParamSlider::update( float value )

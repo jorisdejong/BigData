@@ -26,70 +26,98 @@ void Hardcoded::create()
 	}
 }
 
-void Hardcoded::assignOsc( String outputIp, int port )
+void Hardcoded::assignIos()
 {
-	OscInputAdapter* oscInput = new OscInputAdapter();
-	oscInput->set( 7002 );
-	OscOutputAdapter* oscOutput = new OscOutputAdapter();
-	oscOutput->set( outputIp, port );
-	IoController* oscController = new IoController( "Video", oscInput, oscOutput );
-	FixtureController::getInstance()->addIo( oscController );
-
-	//go through all the params and assign them
-	for ( Fixture* fixture : FixtureController::getInstance()->getFixtures() )
-		for ( FixtureParameter* param : fixture->getParams() )
+	ScopedPointer<XmlElement> data = XmlDocument::parse( File::getSpecialLocation( File::SpecialLocationType::userDocumentsDirectory ).getChildFile( "Octopus/settings.xml" ) );
+	if ( data )
+	{
+		forEachXmlChildElement( *data, io )
 		{
-			if ( FixtureController::getInstance()->getFixtures().indexOf( fixture ) == 0 )
-				param->addHandle( new OscControlHandle( "/layer9/video/speed/values", oscController ) );
-			else
+			if ( io->getStringAttribute( "type" ) == "osc" )
 			{
-				switch ( fixture->getParams().indexOf( param ) )
+				OscInputAdapter* input = nullptr;
+				OscOutputAdapter* output = nullptr;
+				if ( XmlElement* inputXml = io->getChildByName( "input" ) )
 				{
-				case 0:
-					param->addHandle( new OscControlHandle( "/layer9/video/opacity/values", oscController, true ) );
-					break;
-				case 1:
-					param->addHandle( new OscControlHandle( "/layer9/video/rotationz/values", oscController, true ) );
-					break;
-				case 2:
-					param->addHandle( new OscControlHandle( "/layer9/video/effect1/param1/values", oscController ) );
-					break;
+					input = new OscInputAdapter();
+					input->set( inputXml->getIntAttribute( "port" ) );
+				}
+				if ( XmlElement* outputXml = io->getChildByName( "output" ) )
+				{
+					output = new OscOutputAdapter();
+					output->set( outputXml->getStringAttribute( "ip" ), outputXml->getIntAttribute( "port" ) );
+				}
+				IoController* oscController = new IoController( "Video", input, output );
+				FixtureController::getInstance()->addIo( oscController );
+
+				//go through all the params and assign them
+				for ( Fixture* fixture : FixtureController::getInstance()->getFixtures() )
+				{
+					for ( FixtureParameter* param : fixture->getParams() )
+					{
+						if ( FixtureController::getInstance()->getFixtures().indexOf( fixture ) == 0 )
+							param->addHandle( new OscControlHandle( "/layer9/video/speed/values", oscController ) );
+						else
+						{
+							switch ( fixture->getParams().indexOf( param ) )
+							{
+							case 0:
+								param->addHandle( new OscControlHandle( "/layer9/video/opacity/values", oscController, true ) );
+								break;
+							case 1:
+								param->addHandle( new OscControlHandle( "/layer9/video/rotationz/values", oscController, true ) );
+								break;
+							case 2:
+								param->addHandle( new OscControlHandle( "/layer9/video/effect1/param1/values", oscController ) );
+								break;
+							}
+						}
+					}
+				}
+			}
+				
+			else if ( io->getStringAttribute("type") == "midi")
+			{
+				MidiInputAdapter* input = nullptr;
+				MidiOutputAdapter* output = nullptr;
+				if ( XmlElement* inputXml = io->getChildByName( "input" ) )
+				{
+					input = new MidiInputAdapter();
+					input->set( inputXml->getIntAttribute( "index" ) );
+				}
+				if ( XmlElement* outputXml = io->getChildByName( "output" ) )
+				{
+					output = new MidiOutputAdapter();
+					output->set( outputXml->getIntAttribute( "index" ) );
+				}
+				IoController* midiController = new IoController( "Laser", input, output );
+				FixtureController::getInstance()->addIo( midiController );
+
+				//go through all the params and assign them
+				for ( Fixture* fixture : FixtureController::getInstance()->getFixtures() )
+				{
+					for ( FixtureParameter* param : fixture->getParams() )
+					{
+						if ( FixtureController::getInstance()->getFixtures().indexOf( fixture ) == 0 )
+							param->addHandle( new MidiControlHandle( 1, 1, false, midiController ) );
+						else
+						{
+							switch ( fixture->getParams().indexOf( param ) )
+							{
+							case 0:
+								param->addHandle( new MidiControlHandle( 1, 2, false, midiController, true ) );
+								break;
+							case 1:
+								param->addHandle( new MidiControlHandle( 1, 3, false, midiController, true ) );
+								break;
+							case 2:
+								param->addHandle( new MidiControlHandle( 1, 4, false, midiController ) );
+								break;
+							}
+						}
+					}
 				}
 			}
 		}
-}
-
-void Hardcoded::assignMidi()
-{
-	MidiInputAdapter* midiInput = new MidiInputAdapter();
-	if ( MidiInput::getDevices().size() > 0 )
-		midiInput->set( 0 );
-	MidiOutputAdapter* midiOutput = new MidiOutputAdapter();
-	if ( MidiOutput::getDevices().size() > 1 ) //0 = wavetable synth
-		midiOutput->set( 1 );
-	IoController* midiController = new IoController( "Laser", midiInput, midiOutput );
-	FixtureController::getInstance()->addIo( midiController );
-
-	//go through all the params and assign them
-	for ( Fixture* fixture : FixtureController::getInstance()->getFixtures() )
-		for ( FixtureParameter* param : fixture->getParams() )
-		{
-			if ( FixtureController::getInstance()->getFixtures().indexOf( fixture ) == 0 )
-				param->addHandle( new MidiControlHandle( 1, 1, false, midiController) );
-			else
-			{
-				switch ( fixture->getParams().indexOf( param ) )
-				{
-				case 0:
-					param->addHandle( new MidiControlHandle( 1, 2, false, midiController, true ) );
-					break;
-				case 1:
-					param->addHandle( new MidiControlHandle( 1, 3, false, midiController, true ) );
-					break;
-				case 2:
-					param->addHandle( new MidiControlHandle( 1, 4, false, midiController ) );
-					break;
-				}
-			}
-		}
+	}
 }
