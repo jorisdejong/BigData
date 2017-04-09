@@ -14,6 +14,7 @@
 #define MIDIOUTPUTADAPTER_H_INCLUDED
 
 #include "../OutputAdapter.h"
+#include "MidiOutputSetupComponent.h"
 
 class MidiOutputAdapter : public OutputAdapter
 {
@@ -30,6 +31,7 @@ public:
 
 private: 
 	ScopedPointer<MidiOutput> output;
+	ScopedPointer<MidiOutputSetupComponent> outputSetup;
 };
 
 

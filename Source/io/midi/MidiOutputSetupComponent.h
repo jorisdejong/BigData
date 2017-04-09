@@ -1,9 +1,9 @@
 /*
   ==============================================================================
 
-    MidiOutputSetupComponent.h
-    Created: 9 Apr 2017 12:59:27pm
-    Author:  Joris
+	MidiOutputSetupComponent.h
+	Created: 9 Apr 2017 12:59:27pm
+	Author:  Joris
 
   ==============================================================================
 */
@@ -13,20 +13,29 @@
 
 #include "../../../JuceLibraryCode/JuceHeader.h"
 
+class MidiOutputAdapter;
+
 //==============================================================================
 /*
 */
-class MidiOutputSetupComponent    : public Component
+class MidiOutputSetupComponent :
+	public Component,
+	public ComboBox::Listener
 {
 public:
-    MidiOutputSetupComponent();
-    ~MidiOutputSetupComponent();
+	MidiOutputSetupComponent( MidiOutputAdapter& adapter );
+	~MidiOutputSetupComponent();
 
-    void paint (Graphics&) override;
-    void resized() override;
+	void paint( Graphics& ) override;
+	void resized() override;
+
+	void comboBoxChanged( ComboBox* comboBoxThatHasChanged ) override;
 
 private:
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MidiOutputSetupComponent)
+	ScopedPointer<Label> label;
+	ScopedPointer<ComboBox> comboBox;
+	MidiOutputAdapter& adapter;
+	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR( MidiOutputSetupComponent )
 };
 
 

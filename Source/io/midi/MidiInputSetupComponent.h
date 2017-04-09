@@ -31,6 +31,7 @@ public:
 	void comboBoxChanged( ComboBox* comboBoxThatHasChanged ) override;
 
 private:
+	ScopedPointer<Label> label;
 	ScopedPointer<ComboBox> comboBox;
 	MidiInputAdapter& adapter;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MidiInputSetupComponent)

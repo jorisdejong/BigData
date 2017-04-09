@@ -15,6 +15,10 @@
 //==============================================================================
 MidiInputSetupComponent::MidiInputSetupComponent( MidiInputAdapter& adapter ) : adapter( adapter )
 {
+	label = new Label( "label", "In:" );
+	addAndMakeVisible( label );
+	label->setColour( Label::ColourIds::textColourId, Colours::whitesmoke );
+
 	comboBox = new ComboBox();
 	addAndMakeVisible( comboBox );
 	comboBox->addListener( this );
@@ -27,14 +31,17 @@ MidiInputSetupComponent::~MidiInputSetupComponent()
 {
 }
 
-void MidiInputSetupComponent::paint( Graphics& )
+void MidiInputSetupComponent::paint( Graphics&g )
 {
-
+	g.fillAll( Colours::black );
+	g.setColour( Colours::grey );
+	g.drawRect( getLocalBounds(), 1 );   // draw an outline around the component
 }
 
 void MidiInputSetupComponent::resized()
 {
-	comboBox->setBoundsRelative( 0.0f, 0.0f, 1.0f, 1.0f );
+	label->setBoundsRelative( 0.0f, 0.0f, 0.25f, 1.0f );
+	comboBox->setBoundsRelative( 0.25f, 0.0f, 0.75f, 1.0f );
 }
 
 void MidiInputSetupComponent::comboBoxChanged( ComboBox * comboBoxThatHasChanged )

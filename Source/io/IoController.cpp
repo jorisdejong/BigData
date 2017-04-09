@@ -9,6 +9,7 @@
 */
 
 #include "IoController.h"
+#include "../fixture/FixtureController.h"
 
 IoController::IoController( String name, InputAdapter* input, OutputAdapter* output ) : name( name ), input( input ), output( output )
 {
@@ -65,11 +66,8 @@ void IoController::toggleSetupComponent()
 		setup->setSize( w, h );
 
 		TopLevelWindow::getActiveTopLevelWindow()->getChildComponent( 0 )->addChildComponent( setup );
-		//this is dodgy as fuck
-		float hc = 0.5f;
-		if ( TopLevelWindow::getActiveTopLevelWindow()->getChildComponent( 0 )->getNumChildComponents() > 1 )
-			hc += (float)TopLevelWindow::getActiveTopLevelWindow()->getChildComponent( 0 )->getChildComponent(0)->getHeight() / (float)TopLevelWindow::getActiveTopLevelWindow()->getChildComponent( 0 )->getHeight();
-		setup->setCentreRelative( 0.5f, hc );
+		
+		setup->setCentreRelative( 0.85f, 0.7f + FixtureController::getInstance()->getControllers().indexOf( this ) * 0.1f );
 	}
 
 	setup->setVisible( !setup->isVisible() );

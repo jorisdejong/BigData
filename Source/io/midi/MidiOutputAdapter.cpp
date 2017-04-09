@@ -34,7 +34,12 @@ void MidiOutputAdapter::sendMessage( MidiMessage m )
 
 Component * MidiOutputAdapter::getSetupComponent()
 {
-	return nullptr;
+	if ( !outputSetup )
+	{
+		outputSetup = new MidiOutputSetupComponent( *this );
+		outputSetup->setSize( 200, 30 );
+	}
+	return outputSetup;
 }
 
 int MidiOutputAdapter::getIndex()

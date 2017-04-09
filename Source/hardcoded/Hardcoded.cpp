@@ -64,9 +64,10 @@ void Hardcoded::assignMidi()
 	MidiInputAdapter* midiInput = new MidiInputAdapter();
 	if ( MidiInput::getDevices().size() > 0 )
 		midiInput->set( 0 );
-	//MidiOutputAdapter* oscOutput = new MidiOutputAdapter();
-	//oscOutput->set( outputIp, port );
-	IoController* midiController = new IoController( "Laser", midiInput, nullptr );
+	MidiOutputAdapter* midiOutput = new MidiOutputAdapter();
+	if ( MidiOutput::getDevices().size() > 1 ) //0 = wavetable synth
+		midiOutput->set( 1 );
+	IoController* midiController = new IoController( "Laser", midiInput, midiOutput );
 	FixtureController::getInstance()->addIo( midiController );
 
 	//go through all the params and assign them
