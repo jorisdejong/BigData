@@ -18,6 +18,7 @@ ControlHandle::ControlHandle( IoController* io, bool canBeInverted ) : controlle
 
 ControlHandle::~ControlHandle()
 {
+
 }
 
 bool ControlHandle::matches( OSCMessage m )
@@ -29,6 +30,7 @@ bool ControlHandle::matches( MidiMessage m )
 {
 	return false;
 }
+
 
 void ControlHandle::setParameter( FixtureParameter * newParameter )
 {

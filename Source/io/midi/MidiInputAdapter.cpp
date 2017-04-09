@@ -19,12 +19,20 @@ MidiInputAdapter::MidiInputAdapter()
 
 MidiInputAdapter::~MidiInputAdapter()
 {
+	if ( input )
+		input->stop();
 }
 
 void MidiInputAdapter::set( int newInput )
 {
+	if ( input )
+		input->stop();
+
 	if ( input = juce::MidiInput::openDevice( newInput, this ) )
+	{
+		input->start();
 		DBG( "Opened Midi port " + MidiInput::getDevices()[newInput] );
+	}
 	else
 		DBG( "Could not open Midi device" );
 }

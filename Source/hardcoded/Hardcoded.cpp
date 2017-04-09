@@ -99,19 +99,19 @@ void Hardcoded::assignIos()
 					for ( FixtureParameter* param : fixture->getParams() )
 					{
 						if ( FixtureController::getInstance()->getFixtures().indexOf( fixture ) == 0 )
-							param->addHandle( new MidiControlHandle( 1, 1, false, midiController ) );
+							param->addHandle( new MidiControlHandle( 1, 48, false, midiController ) );
 						else
 						{
 							switch ( fixture->getParams().indexOf( param ) )
 							{
 							case 0:
-								param->addHandle( new MidiControlHandle( 1, 2, false, midiController, true ) );
+								param->addHandle( new MidiControlHandle( 1, 49, false, midiController, true ) );
 								break;
 							case 1:
-								param->addHandle( new MidiControlHandle( 1, 3, false, midiController, true ) );
+								param->addHandle( new MidiControlHandle( 1, 50, false, midiController, true ) );
 								break;
 							case 2:
-								param->addHandle( new MidiControlHandle( 1, 4, false, midiController ) );
+								param->addHandle( new MidiControlHandle( 1, 51, false, midiController ) );
 								break;
 							}
 						}

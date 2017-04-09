@@ -22,7 +22,7 @@ MidiControlHandle::~MidiControlHandle()
 {
 }
 
-bool MidiControlHandle::matches( const MidiMessage& m )
+bool MidiControlHandle::matches( MidiMessage m )
 {
 	return (m.getChannel() == channel
 		&& m.isController() ? m.getControllerNumber() == noteNumberOrCC : m.isNoteOnOrOff() ? m.getNoteNumber() == noteNumberOrCC : false);

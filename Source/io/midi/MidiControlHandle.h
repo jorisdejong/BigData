@@ -21,7 +21,7 @@ public:
 	MidiControlHandle( int channel, int controller, bool isNote, IoController* io, bool canBeInverted = false);
 	~MidiControlHandle();
 
-	bool matches( const MidiMessage& m );
+	bool matches( MidiMessage m ) override;
 	void update( float value ) override;
 
 private:
