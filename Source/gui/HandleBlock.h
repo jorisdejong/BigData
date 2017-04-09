@@ -30,6 +30,8 @@ public:
 
 	void buttonClicked( Button* b ) override;
 
+	void link();
+
 private:
 	bool isFlipped;
 	ScopedPointer<TextButton> linkButton;

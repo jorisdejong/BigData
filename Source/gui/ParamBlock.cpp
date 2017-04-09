@@ -16,7 +16,7 @@ ParamBlock::ParamBlock( FixtureParameter* param )
 {
 	slider = new ParamSlider( param->getName() );
 	addAndMakeVisible( slider );
-	param->setSlider( slider );
+	param->setParamBlock( this );
 
 	for ( ControlHandle* handle : param->getHandles() )
 	{
@@ -60,7 +60,15 @@ void ParamBlock::resized()
 			block->setBoundsRelative( 0.66f, 0.0f, 0.33f, 1.0f );
 			break;
 		}
-		
 	}
+}
 
+ParamSlider * ParamBlock::getSlider()
+{
+	return slider;
+}
+
+OwnedArray<HandleBlock>& ParamBlock::getBlocks()
+{
+	return blocks;
 }

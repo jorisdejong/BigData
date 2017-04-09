@@ -17,15 +17,12 @@ HandleBlock::HandleBlock( ControlHandle* handle, bool isFlipped ) : handle( hand
 	linkButton = new TextButton( "Link" );
 	linkButton->addListener( this );
 	linkButton->setClickingTogglesState( true );
-	linkButton->setColour( TextButton::buttonColourId, Colours::grey.withMultipliedBrightness( 0.1f ) );
-	linkButton->setColour( TextButton::buttonOnColourId, Colours::red );
+	
 	addAndMakeVisible( linkButton );
 
 	invertButton = new TextButton( "I" );
 	invertButton->addListener( this );
 	invertButton->setClickingTogglesState( true );
-	invertButton->setColour( TextButton::buttonColourId, Colours::grey.withMultipliedBrightness( 0.1f ) );
-	invertButton->setColour( TextButton::buttonOnColourId, Colours::red );
 	if ( handle->canBeInverted() )
 		addAndMakeVisible( invertButton );
 }
@@ -43,13 +40,13 @@ void HandleBlock::resized()
 {
 	if ( isFlipped )
 	{
-		linkButton->setBoundsRelative( 0.0f, 0.0f, 0.5f, 1.0f );
-		invertButton->setBoundsRelative( 0.5f, 0.0f, 0.5f, 1.0f );
+		invertButton->setBoundsRelative( 0.0f, 0.0f, 0.5f, 1.0f );
+		linkButton->setBoundsRelative( 0.5f, 0.0f, 0.5f, 1.0f );
 	}
 	else
 	{
-		invertButton->setBoundsRelative( 0.0f, 0.0f, 0.5f, 1.0f );
-		linkButton->setBoundsRelative( 0.5f, 0.0f, 0.5f, 1.0f );
+		linkButton->setBoundsRelative( 0.0f, 0.0f, 0.5f, 1.0f );
+		invertButton->setBoundsRelative( 0.5f, 0.0f, 0.5f, 1.0f );
 	}
 }
 
@@ -59,4 +56,9 @@ void HandleBlock::buttonClicked( Button * b )
 		handle->setLinkStatus( b->getToggleState() );
 	else if ( b == invertButton )
 		handle->setInverted( b->getToggleState() );
+}
+
+void HandleBlock::link()
+{
+	linkButton->triggerClick();
 }

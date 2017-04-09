@@ -9,13 +9,13 @@
 */
 
 #include "FixtureParameter.h"
-
+#include "../gui/ParamBlock.h"
 
 
 FixtureParameter::FixtureParameter( String name ) : name( name )
 {
 	uniqueId = juce::Uuid();
-	slider = nullptr;
+	block = nullptr;
 }
 
 FixtureParameter::~FixtureParameter()
@@ -29,8 +29,9 @@ void FixtureParameter::update( float newValue, ControlHandle* source )
 		if ( handle != source ) //no feedback
 			if ( handle->isLinked() )
 				handle->update( newValue );
-	if ( slider )
-		slider->update( newValue );
+	
+	if ( block )
+		block->getSlider()->update( newValue );
 }
 
 void FixtureParameter::addHandle( ControlHandle * newHandle )
@@ -50,9 +51,9 @@ String FixtureParameter::getName()
 	return name;
 }
 
-void FixtureParameter::setSlider( ParamSlider * newSlider )
+void FixtureParameter::setParamBlock( ParamBlock * newBlock )
 {
-	slider = newSlider;
+	block = newBlock;
 }
 
 const bool operator<( const FixtureParameter& lhs, const FixtureParameter& rhs )

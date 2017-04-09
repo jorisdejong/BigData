@@ -28,6 +28,9 @@ public:
     void paint (Graphics&) override;
     void resized() override;
 
+	ParamSlider* getSlider();
+	OwnedArray<HandleBlock>& getBlocks();
+
 private:
 	ScopedPointer<ParamSlider> slider;
 	OwnedArray<HandleBlock> blocks;

@@ -61,3 +61,8 @@ float FixtureBlock::getRelativeHeight()
 		totalParamCount += fixtureIt->getParams().size();
 	return (float) fixture->getParams().size() / totalParamCount;
 }
+
+OwnedArray<ParamBlock>& FixtureBlock::getParamBlocks()
+{
+	return paramBlocks;
+}

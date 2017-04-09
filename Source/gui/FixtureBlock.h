@@ -30,6 +30,8 @@ public:
 
 	float getRelativeHeight();
 
+	OwnedArray<ParamBlock>& getParamBlocks();
+
 private:
 	ScopedPointer<Label> fixtureLabel;
 	OwnedArray<ParamBlock> paramBlocks;

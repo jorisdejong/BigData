@@ -17,7 +17,10 @@
 
 #include "JuceHeader.h"
 #include "../io/ControlHandle.h"
-#include "../gui/ParamSlider.h"
+
+class ParamBlock;
+
+
 
 class FixtureParameter
 {
@@ -34,12 +37,12 @@ public:
 
 	String getName();
 
-	void setSlider( ParamSlider* slider );
+	void setParamBlock( ParamBlock* slider );
 
 private:
 	OwnedArray<ControlHandle> handles;
 	String name;
-	ParamSlider* slider;
+	ParamBlock* block;
 	
 };
 
