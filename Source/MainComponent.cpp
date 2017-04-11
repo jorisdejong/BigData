@@ -56,7 +56,7 @@ void MainContentComponent::resized()
 	for ( FixtureBlock* fixtureBlock : fixtureBlocks )
 	{
 		float h = fixtureBlock->getRelativeHeight();
-		fixtureBlock->setBoundsRelative( 0.16666f, y, 0.66f, h );
+		fixtureBlock->setBoundsRelative( 0.16666f, y, 0.66f, h - 0.001f );
 		y += h;
 	}
 

@@ -22,13 +22,16 @@ class ParamBlock;
 
 
 
-class FixtureParameter
+class FixtureParameter :
+	public Slider::Listener
 {
 public:
 	FixtureParameter( String name );
 	~FixtureParameter();
 
 	void update( float value, ControlHandle* source );
+
+	void sliderValueChanged(Slider* slider) override;
 
 	void addHandle( ControlHandle* newHandle );
 	const OwnedArray<ControlHandle>& getHandles();
@@ -37,7 +40,7 @@ public:
 
 	String getName();
 
-	void setParamBlock( ParamBlock* slider );
+	void setParamBlock( ParamBlock* block );
 
 private:
 	OwnedArray<ControlHandle> handles;

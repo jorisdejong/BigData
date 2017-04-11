@@ -34,6 +34,16 @@ void FixtureParameter::update( float newValue, ControlHandle* source )
 		block->getSlider()->update( newValue );
 }
 
+void FixtureParameter::sliderValueChanged(Slider * slider)
+{
+	for (ControlHandle* handle : handles)
+		if (handle->isLinked())
+			handle->update((float)slider->getValue());
+
+	if (block)
+		block->getSlider()->update((float)slider->getValue());
+}
+
 void FixtureParameter::addHandle( ControlHandle * newHandle )
 {
 	//parameter and handle need to know each other
@@ -54,6 +64,7 @@ String FixtureParameter::getName()
 void FixtureParameter::setParamBlock( ParamBlock * newBlock )
 {
 	block = newBlock;
+	block->getSlider()->addListener(this);
 }
 
 const bool operator<( const FixtureParameter& lhs, const FixtureParameter& rhs )
