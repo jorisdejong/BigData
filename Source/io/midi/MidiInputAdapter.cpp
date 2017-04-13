@@ -10,6 +10,7 @@
 
 #include "MidiInputAdapter.h"
 #include "../../fixture/FixtureController.h"
+#include "MidiControlHandle.h"
 
 
 MidiInputAdapter::MidiInputAdapter()
@@ -44,9 +45,16 @@ void MidiInputAdapter::handleIncomingMidiMessage( juce::MidiInput *, const MidiM
 	{
 		if ( handle->matches( message ) )
 		{
+			//at this point, we know we're a midicontrolhandle
+			MidiControlHandle* midiHandle = static_cast<MidiControlHandle*>(handle);
+
 			if ( message.isController() )
 			{
-				float value = message.getControllerValue() / 127.0f;
+				int min, max;
+				midiHandle->getRange(min, max);
+				int range = max - min;
+				float value = (float)(message.getControllerValue() - min)/range;
+				//float value = message.getControllerValue() / 127.0f;
 				if ( handle->isInverted() )
 					value = 1.0f - value;
 				controller->update( handle, value );

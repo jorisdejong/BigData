@@ -10,11 +10,15 @@
 
 #include "Hardcoded.h"
 
+//#define EYESUPPLY
+
 void Hardcoded::create()
 {
 	Fixture* globalFixture = new Fixture("Global");
 	globalFixture->addParameter(new FixtureParameter("Speed"));
+	globalFixture->addParameter(new FixtureParameter("Color"));
 	FixtureController::getInstance()->addFixture(globalFixture);
+
 
 	for (int i = 0; i < 6; i++)
 	{
@@ -44,7 +48,16 @@ void Hardcoded::assignIos()
 				if (XmlElement* outputXml = io->getChildByName("output"))
 				{
 					output = new OscOutputAdapter();
+
+#ifdef EYESUPPLY
+					output->set("10.0.0.29", 7000);
+#endif // EYESUPPLY
+
+#ifndef EYESUPPLY
 					output->set(outputXml->getStringAttribute("ip"), outputXml->getIntAttribute("port"));
+#endif // !EYESUPPLY
+
+					
 				}
 				IoController* oscController = new IoController("Video", input, output);
 				FixtureController::getInstance()->addIo(oscController);
@@ -54,14 +67,31 @@ void Hardcoded::assignIos()
 				{
 					for (FixtureParameter* param : fixture->getParams())
 					{
+						int layer = 27;
+#ifdef EYESUPPLY
+						layer = 13;
+#endif
 						if (FixtureController::getInstance()->getFixtures().indexOf(fixture) == 0)
-							param->addHandle(new OscControlHandle("/layer9/video/speed/values", oscController));
+						{
+							switch (fixture->getParams().indexOf(param))
+							{
+							case 0:
+								param->addHandle(new OscControlHandle("/layer"+String(layer)+"/video/position/speed", oscController));
+								break;
+							case 1:
+								param->addHandle(new OscControlHandle("/layer" + String(layer) + "/video/effect1/param2/values", oscController));
+								break;
+							}
+						}
 						else
 						{
 							switch (fixture->getParams().indexOf(param))
 							{
 							case 0:
-								param->addHandle(new OscControlHandle("/layer9/video/opacity/values", oscController, true));
+								int fix = FixtureController::getInstance()->getFixtures().indexOf(fixture) - 1;
+								fix *= 16;
+								fix += 8;
+								param->addHandle(new OscControlHandle("/layer"+String(layer)+"/video/effect2/param"+String(fix)+"/values", oscController, true));
 								break;
 							}
 						}
@@ -91,8 +121,24 @@ void Hardcoded::assignIos()
 				{
 					for (FixtureParameter* param : fixture->getParams())
 					{
+						//global fixture
 						if (FixtureController::getInstance()->getFixtures().indexOf(fixture) == 0)
-							param->addHandle(new MidiControlHandle(4, 19, false, midiController));
+						{
+							switch (fixture->getParams().indexOf(param))
+							{
+							case 0:
+								param->addHandle(new MidiControlHandle(4, 17, false, midiController));
+								break;
+							case 1:
+								//color translate
+								//32 ... 223
+								MidiControlHandle* rangedHandle = new MidiControlHandle(4, 8, false, midiController);
+								rangedHandle->setRange(16, 111);
+								param->addHandle(rangedHandle);
+								break;
+							}
+							
+						}
 						else
 						{
 							switch (fixture->getParams().indexOf(param))
@@ -131,7 +177,12 @@ void Hardcoded::assignIos()
 			}
 		}
 		//while we're here, write the midi ios to xml for debugging
-		XmlElement* midiDevices = new XmlElement("MidiDevices");
+		XmlElement* midiDevices = data->getChildByName("MidiDevices");
+		if (!midiDevices)
+		{
+			midiDevices = new XmlElement("MidiDevices");
+			data->addChildElement(midiDevices);
+		}
 		for (String device : MidiInput::getDevices())
 		{
 			XmlElement* midiInput = new XmlElement("input");
@@ -144,7 +195,7 @@ void Hardcoded::assignIos()
 			midiOutput->setAttribute("name", device);
 			midiDevices->addChildElement(midiOutput);
 		}
-		data->addChildElement(midiDevices);
+		
 
 		data->writeToFile(settingsFile, "");
 	}

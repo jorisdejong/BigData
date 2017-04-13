@@ -16,6 +16,8 @@ MidiControlHandle::MidiControlHandle( int channel, int controller, bool isNote, 
 	noteNumberOrCC ( controller ),
 	isNote ( isNote )
 {
+	min = 0;
+	max = 127;
 }
 
 MidiControlHandle::~MidiControlHandle()
@@ -32,11 +34,31 @@ void MidiControlHandle::update( float value )
 {
 	if ( isInverted() )
 		value = 1.0f - value;
+
+	int range = max - min;
+	int newValue = value * range;
+	newValue += min;
+
 	MidiMessage m;
 	if ( isNote )
-		m = MidiMessage::noteOn( channel, noteNumberOrCC, value * 127 );
+		m = MidiMessage::noteOn( channel, noteNumberOrCC, (uint8)newValue );
 	else
-		m = MidiMessage::controllerEvent( channel, noteNumberOrCC, int(value * 127) );
+	{
+		m = MidiMessage::controllerEvent(channel, noteNumberOrCC, int(newValue));
+		DBG("Sending Midi value " + String(newValue));
+	}
 
 	controller->getOutput()->sendMessage( m );
+}
+
+void MidiControlHandle::setRange(int newMin, int newMax)
+{
+	min = newMin;
+	max = newMax;
+}
+
+void MidiControlHandle::getRange(int & setMin, int & setMax)
+{
+	setMin = min;
+	setMax = max;
 }

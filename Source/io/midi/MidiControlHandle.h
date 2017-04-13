@@ -24,10 +24,16 @@ public:
 	bool matches( MidiMessage m ) override;
 	void update( float value ) override;
 
+	void setRange(int newMin, int newMax);
+	void getRange(int& min, int& max);
+
+
 private:
 	int channel;
 	int noteNumberOrCC;
 	bool isNote;
+	int min;
+	int max;
 };
 
 
