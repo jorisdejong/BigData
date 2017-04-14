@@ -24,11 +24,13 @@ ParamBlock::ParamBlock( FixtureParameter* param )
 		switch ( param->getHandles().indexOf( handle ) )
 		{
 		case 0:
-		default:
 			block = new HandleBlock( handle );
 			break;
 		case 1:
 			block = new HandleBlock( handle, true );
+			break;
+		case 2:
+			block = new HandleBlock( handle );
 			break;
 		}
 		
@@ -54,10 +56,13 @@ void ParamBlock::resized()
 		switch ( blocks.indexOf( block ) )
 		{
 		case 0:
-			block->setBoundsRelative( 0.0f, 0.0f, 0.33f, 1.0f );
+			block->setBoundsRelative( 0.0f, 0.0f, 0.166f, 1.0f );
 			break;
 		case 1:
 			block->setBoundsRelative( 0.66f, 0.0f, 0.33f, 1.0f );
+			break;
+		case 2:
+			block->setBoundsRelative( 0.166f, 0.0f, 0.166f, 1.0f );
 			break;
 		}
 	}

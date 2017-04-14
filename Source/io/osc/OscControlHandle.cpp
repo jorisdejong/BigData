@@ -23,7 +23,11 @@ OscControlHandle::~OscControlHandle()
 
 bool OscControlHandle::matches( juce::OSCMessage message )
 {
-	return message.getAddressPattern().matches( oscAddress );
+	//if this handle sent out less than a second, it's probably feedback
+	if ( Time::getCurrentTime().getApproximateMillisecondCounter() - lastSendTime.getApproximateMillisecondCounter() < 1000 )
+		return false;
+	else
+		return message.getAddressPattern().matches( oscAddress );
 }
 
 void OscControlHandle::update( float value )
@@ -32,4 +36,10 @@ void OscControlHandle::update( float value )
 		value = 1.0f - value;
 	juce::OSCMessage m( oscAddress.toString(), type == juce::OSCTypes::int32 ? (int) value : value );
 	controller->getOutput()->sendMessage( m );
+	lastSendTime = Time::getCurrentTime();
+}
+
+void OscControlHandle::timerCallback()
+{
+	lastSendTime = Time::getCurrentTime();
 }

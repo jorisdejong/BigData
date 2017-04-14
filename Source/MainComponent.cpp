@@ -69,7 +69,7 @@ void MainContentComponent::buttonClicked( Button * b )
 		for ( auto fixtureBlock : fixtureBlocks )
 			for ( auto paramBlock : fixtureBlock->getParamBlocks() )
 				for ( HandleBlock* block : paramBlock->getBlocks() )
-					if ( paramBlock->getBlocks().indexOf( block ) == 0 && b == linkAllVideo )
+					if ( (paramBlock->getBlocks().indexOf( block ) == 0 || paramBlock->getBlocks().indexOf( block ) == 2 ) && b == linkAllVideo )
 						block->link();
 					else if ( paramBlock->getBlocks().indexOf( block ) == 1 && b == linkAllLaser )
 						block->link();

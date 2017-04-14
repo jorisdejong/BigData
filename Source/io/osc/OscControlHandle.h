@@ -16,7 +16,8 @@
 #include "JuceHeader.h"
 
 class OscControlHandle :
-	public ControlHandle
+	public ControlHandle,
+	public Timer
 {
 public:
 	OscControlHandle( OSCAddress address, IoController* io, bool canBeInverted = false );
@@ -25,7 +26,9 @@ public:
 	bool matches( OSCMessage message ) override;
 	void update( float value ) override;
 
+	void timerCallback() override;
 private:
+	Time lastSendTime;
 	OSCAddress oscAddress;
 	OSCType type;
 };

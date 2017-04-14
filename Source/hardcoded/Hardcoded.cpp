@@ -28,12 +28,43 @@ void Hardcoded::create()
 	}
 }
 
+void Hardcoded::setupResolume( Fixture* fixture, FixtureParameter* param, int layer, IoController* oscController )
+{
+	if ( FixtureController::getInstance()->getFixtures().indexOf( fixture ) == 0 )
+	{
+		switch ( fixture->getParams().indexOf( param ) )
+		{
+		case 0:
+			param->addHandle( new OscControlHandle( "/layer" + String( layer ) + "/video/position/speed", oscController ) );
+			break;
+		case 1:
+			param->addHandle( new OscControlHandle( "/layer" + String( layer ) + "/video/effect1/param2/values", oscController ) );
+			break;
+		}
+	}
+	else
+	{
+		switch ( fixture->getParams().indexOf( param ) )
+		{
+		case 0:
+			int fix = FixtureController::getInstance()->getFixtures().indexOf( fixture ) - 1;
+			fix *= 16;
+			fix += 8;
+			param->addHandle( new OscControlHandle( "/layer" + String( layer ) + "/video/effect2/param" + String( fix ) + "/values", oscController, true ) );
+			break;
+		}
+	}
+}
+
 void Hardcoded::assignIos()
 {
 	File settingsFile = File::getSpecialLocation(File::SpecialLocationType::userDocumentsDirectory).getChildFile("Octopus/settings.xml");
 	ScopedPointer<XmlElement> data = XmlDocument::parse(settingsFile);
 	if (data)
 	{
+		//we're going to have 3 OSC ios
+		//first one is KBK, then Kappa, then Eyesupply
+		int oscIo = 0;
 		forEachXmlChildElement(*data, io)
 		{
 			if (io->getStringAttribute("type") == "osc")
@@ -48,16 +79,7 @@ void Hardcoded::assignIos()
 				if (XmlElement* outputXml = io->getChildByName("output"))
 				{
 					output = new OscOutputAdapter();
-
-#ifdef EYESUPPLY
-					output->set("10.0.0.29", 7000);
-#endif // EYESUPPLY
-
-#ifndef EYESUPPLY
-					output->set(outputXml->getStringAttribute("ip"), outputXml->getIntAttribute("port"));
-#endif // !EYESUPPLY
-
-					
+					output->set( outputXml->getStringAttribute( "ip" ), outputXml->getIntAttribute( "port" ) );					
 				}
 				IoController* oscController = new IoController("Video", input, output);
 				FixtureController::getInstance()->addIo(oscController);
@@ -67,36 +89,45 @@ void Hardcoded::assignIos()
 				{
 					for (FixtureParameter* param : fixture->getParams())
 					{
-						int layer = 27;
-#ifdef EYESUPPLY
-						layer = 13;
-#endif
-						if (FixtureController::getInstance()->getFixtures().indexOf(fixture) == 0)
+						switch ( oscIo )
 						{
-							switch (fixture->getParams().indexOf(param))
+						case 0:
+							setupResolume( fixture, param, 27, oscController );
+							break;
+						case 1:
+							if ( FixtureController::getInstance()->getFixtures().indexOf( fixture ) == 0 )
 							{
-							case 0:
-								param->addHandle(new OscControlHandle("/layer"+String(layer)+"/video/position/speed", oscController));
-								break;
-							case 1:
-								param->addHandle(new OscControlHandle("/layer" + String(layer) + "/video/effect1/param2/values", oscController));
-								break;
+								switch ( fixture->getParams().indexOf( param ) )
+								{
+								case 0:
+									param->addHandle( new OscControlHandle( "/beyond/bla/speed", oscController ) );
+									break;
+								case 1:
+									param->addHandle( new OscControlHandle( "/beyond/bla/color", oscController ) );
+									break;
+								}
 							}
-						}
-						else
-						{
-							switch (fixture->getParams().indexOf(param))
+							else
 							{
-							case 0:
-								int fix = FixtureController::getInstance()->getFixtures().indexOf(fixture) - 1;
-								fix *= 16;
-								fix += 8;
-								param->addHandle(new OscControlHandle("/layer"+String(layer)+"/video/effect2/param"+String(fix)+"/values", oscController, true));
-								break;
+								switch ( fixture->getParams().indexOf( param ) )
+								{
+								case 0:
+									int fix = FixtureController::getInstance()->getFixtures().indexOf( fixture ) - 1;
+									param->addHandle( new OscControlHandle( "/beyond/bla/brightness", oscController, true ) );
+									break;
+								}
 							}
+							break;
+						case 2:
+							setupResolume( fixture, param, 13, oscController );
+							break;
+							
+							
+
 						}
 					}
 				}
+				oscIo++;
 			}
 
 			else if (io->getStringAttribute("type") == "midi")
@@ -183,6 +214,8 @@ void Hardcoded::assignIos()
 			midiDevices = new XmlElement("MidiDevices");
 			data->addChildElement(midiDevices);
 		}
+		//remove the previous settings and write the new ones
+		midiDevices->deleteAllChildElements(); 
 		for (String device : MidiInput::getDevices())
 		{
 			XmlElement* midiInput = new XmlElement("input");

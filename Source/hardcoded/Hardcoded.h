@@ -28,6 +28,9 @@ public:
 	static void create();
 	static void assignIos();
 
+private:
+	static void setupResolume( Fixture* fixture, FixtureParameter* param, int layer, IoController* oscController );
+
 };
 
 
