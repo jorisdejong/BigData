@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="ChmR1G" name="Octopus" projectType="guiapp" version="1.0.0"
+<JUCERPROJECT id="ChmR1G" name="Octopus" projectType="guiapp" version="1.0.1"
               bundleIdentifier="nl.hybridvisuals.Octopus" includeBinaryInAppConfig="1"
-              jucerVersion="4.3.1" companyName="Hybrid Visuals" companyWebsite="www.hybridvisuals.nl"
-              companyEmail="joris@hybridvisuals.nl">
+              jucerVersion="5.0.2" companyName="Hybrid Visuals" companyWebsite="www.hybridvisuals.nl"
+              companyEmail="joris@hybridvisuals.nl" displaySplashScreen="0"
+              reportAppUsage="1" splashScreenColour="Dark">
   <MAINGROUP id="YJxLjZ" name="Octopus">
     <GROUP id="{B5C78092-8F88-B9F7-5FD4-817BBC6768DF}" name="Source">
       <GROUP id="{8E90C481-816B-5013-D2D9-45C95C71FE25}" name="gfx">
@@ -89,24 +90,24 @@
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
-    <VS2015 targetFolder="Builds/VisualStudio2015" smallIcon="bw6PNp" bigIcon="bw6PNp">
+    <VS2017 targetFolder="Builds/VisualStudio2017" smallIcon="bw6PNp" bigIcon="bw6PNp">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
-                       isDebug="1" optimisation="1" targetName="Octopus Debug"/>
+                       isDebug="1" optimisation="1" targetName="Octopus"/>
         <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
                        isDebug="0" optimisation="3" targetName="Octopus"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_audio_basics" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_audio_devices" path="../JUCE/modules"/>
-        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
         <MODULEPATH id="juce_osc" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../JUCE/modules"/>
       </MODULEPATHS>
-    </VS2015>
+    </VS2017>
   </EXPORTFORMATS>
   <MODULES>
     <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
